@@ -7,6 +7,7 @@ import AddRoom from './components/AddRoom/AddRoom';
 import DeleteRoom from './components/DeleteRoom/DeleteRoom';
 import Reservations from './components/Reservations/Reservations';
 import Reserve from './components/Reserve/Reserve';
+import Detail from './components/Detail/Detail';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
         </header>
         <Routes>
           <Route path="/" element={<Splash />} />
-          <Route path="/Rooms" element={<Rooms />} />
+          <Route path="/Rooms/:id" element={<Detail />} />
+          <Route path="/Rooms/*" element={<Rooms />} />
           <Route path="/AddRoom" element={<AddRoom />} />
           <Route path="/DeleteRoom" element={<DeleteRoom />} />
           <Route path="/Reservations" element={<Reservations />} />
