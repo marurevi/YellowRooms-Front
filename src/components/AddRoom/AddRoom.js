@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function AddRoom() {
-  return (
-    <div>AddRoom</div>
-  );
-}
+const AddRoom = () => (
+  <div>AddRoom</div>
+);
+
+export default AddRoom;

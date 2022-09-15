@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default function Reserve() {
-  return (
-    <div>Reserve</div>
-  );
-}
+const Reserve = () => (
+  <div>Reserve</div>
+);
+
+export default Reserve;
