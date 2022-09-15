@@ -6,6 +6,7 @@ import Rooms from './components/Rooms/Rooms';
 import AddRoom from './components/AddRoom/AddRoom';
 import DeleteRoom from './components/DeleteRoom/DeleteRoom';
 import Reservations from './components/Reservations/Reservations';
+import Reserve from './components/Reserve/Reserve';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/AddRoom" element={<AddRoom />} />
           <Route path="/DeleteRoom" element={<DeleteRoom />} />
           <Route path="/Reservations" element={<Reservations />} />
+          <Route path="/Reserve" element={<Reserve />} />
         </Routes>
       </BrowserRouter>
     </div>
