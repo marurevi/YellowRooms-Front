@@ -15,20 +15,17 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <header className="App-header">
-          <h1>Yellow Room</h1>
-          <Header />
-        </header>
+        <Header />
         <Routes>
           <Route path="/" element={<Splash />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/Rooms/:id" element={<Detail />} />
           <Route path="/Rooms/*" element={<Rooms />} />
           <Route path="/AddRoom" element={<AddRoom />} />
           <Route path="/DeleteRoom" element={<DeleteRoom />} />
           <Route path="/Reservations" element={<Reservations />} />
           <Route path="/Reserve" element={<Reserve />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </div>
