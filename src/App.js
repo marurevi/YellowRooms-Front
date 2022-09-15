@@ -15,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <h1>Yellow Rooms</h1>
         <Header />
         <Routes>
           <Route path="/" element={<Splash />} />
