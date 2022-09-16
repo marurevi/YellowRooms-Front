@@ -25,8 +25,8 @@ const Splash = () => {
       <h2>Welcome to Yellow Rooms</h2>
       <ul className="registration-links">
         <form onSubmit={userSubmit}>
-          <input onChange={(e) => setUserName(e.target.value)} className="loginInput" type="text" placeholder="User" />
-          <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" />
+          <input onChange={(e) => setUserName(e.target.value)} className="loginInput" type="text" placeholder="User" required />
+          <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" required />
           <button type="submit">Login</button>
         </form>
         <li><NavLink className="link" to="signup">REGISTER</NavLink></li>

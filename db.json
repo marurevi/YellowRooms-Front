@@ -6,83 +6,11 @@
       "author": "typicode"
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
   "users": [
     {
       "name": "axel",
-      "password": "123456",
+      "password": "15684",
       "id": 1
-    },
-    {
-      "name": "mariana",
-      "password": "654832",
-      "id": 2
-    },
-    {
-      "name": "andres",
-      "password": "654832",
-      "id": 3
-    },
-    {
-      "name": "tadesse",
-      "password": "16587",
-      "id": 4
-    },
-    {
-      "name": "alex",
-      "password": "16587",
-      "id": 5
-    },
-    {
-      "name": "alex",
-      "password": "16587",
-      "id": 6
-    },
-    {
-      "name": "axel",
-      "password": "123456",
-      "id": 7
-    },
-    {
-      "name": "axel",
-      "password": "159784",
-      "id": 8
-    },
-    {
-      "name": "axel",
-      "password": "159784",
-      "id": 9
-    },
-    {
-      "name": "axel",
-      "password": "159784",
-      "id": 10
-    },
-    {
-      "name": "axe",
-      "password": "afsefa",
-      "id": 11
-    },
-    {
-      "name": "axe",
-      "password": "afsefa",
-      "id": 12
-    },
-    {
-      "name": "axesafasf",
-      "password": "",
-      "id": 13
-    },
-    {
-      "name": "",
-      "password": "",
-      "id": 14
     }
   ],
   "profile": {
