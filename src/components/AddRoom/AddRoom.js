@@ -11,12 +11,11 @@ const AddRoom = () => {
   });
 
   const formInputChange = (event) => {
+    event.preventDefault();
     setFormData((oldState) => ({
       ...oldState,
       [event.target.name]: event.target.value,
     }));
-    event.preventDefault();
-    event.target.name;
   };
   const formSubmitted = (event) => {
     event.preventDefault();
