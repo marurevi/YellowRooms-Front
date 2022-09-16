@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
 const AddRoom = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    star: 0,
+    personsAllowed: 1,
+    photo: "",
+    description: "",
+    price: 0,
+  });
+
   const formSubmitted = (event) => {
     event.preventDefault();
     console.log(event);
