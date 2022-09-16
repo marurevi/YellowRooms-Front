@@ -14,7 +14,6 @@ import Login from './components/Login/Login';
 const App = () => (
   <div className="App">
     <BrowserRouter>
-      <h1>Yellow Rooms</h1>
       <Header />
       <Routes>
         <Route path="/" element={<Splash />} />

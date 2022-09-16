@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
+import logo from '../../img/YELLOW.png';
 import './Header.css';
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
   }
   return (
     <nav className="nav">
-      <h2>navbar logo</h2>
+      <img src={logo} alt="logo" className="logo" />
       <ul className="ulMenu">
         <li><NavLink className="link" to="/Rooms">ROOMS</NavLink></li>
         <li><NavLink className="link" to="/Reserve">RESERVE</NavLink></li>

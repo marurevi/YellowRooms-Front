@@ -1,0 +1,21 @@
+.splash-page {
+  background-color: yellow;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}
+
+.registration-links {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mainLogo {
+  width: 80%;
+  margin: 0 auto;
+}
