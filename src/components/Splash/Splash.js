@@ -11,13 +11,15 @@ const Splash = () => {
 
   const userSubmit = async (e) => {
     e.preventDefault();
-    axios.post(loginURL, {
-      name: userName,
-      password: userPassword,
-    })
-      .then(() => {
+    axios.get(loginURL).then((response) => {
+      const data = response.data
+        .filter((item) => item.name === userName && item.password === userPassword);
+      if (data[0]) {
+        setUserName('');
+        setUserPassword('');
         window.location.href = '/Rooms';
-      });
+      }
+    });
   };
   return (
     <div className="splash-page">

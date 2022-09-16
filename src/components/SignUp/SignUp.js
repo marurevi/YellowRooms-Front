@@ -12,8 +12,10 @@ const SignUp = () => {
       name: userName,
       password: userPassword,
     })
-      .then(() => {
-        window.location.href = '/Rooms';
+      .then((response) => {
+        if (response.status === 201) {
+          window.location.href = '/Rooms';
+        }
       });
   };
 

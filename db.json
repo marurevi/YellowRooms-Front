@@ -11,9 +11,21 @@
       "name": "axel",
       "password": "15684",
       "id": 1
+    },
+    {
+      "name": "andres",
+      "password": "1568das",
+      "id": 2
+    },
+    {
+      "name": "mariana",
+      "password": "8915",
+      "id": 3
+    },
+    {
+      "name": "tadesse",
+      "password": "4687",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
