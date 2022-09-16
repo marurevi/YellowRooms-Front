@@ -6,7 +6,9 @@ const Rooms = () => {
   return (
     <>
       <h2>Rooms</h2>
-      <NavLink className="link" to={value}>Detail</NavLink>
+      <NavLink className="link" to={value}>
+        Detail
+      </NavLink>
     </>
   );
 };
