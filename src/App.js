@@ -9,7 +9,6 @@ import Reservations from './components/Reservations/Reservations';
 import Reserve from './components/Reserve/Reserve';
 import Detail from './components/Detail/Detail';
 import SignUp from './components/SignUp/SignUp';
-import Login from './components/Login/Login';
 
 const App = () => (
   <div className="App">
@@ -17,7 +16,6 @@ const App = () => (
       <Header />
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Rooms/:id" element={<Detail />} />
         <Route path="/Rooms/*" element={<Rooms />} />
