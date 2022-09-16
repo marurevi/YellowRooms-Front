@@ -12,7 +12,7 @@ const AddRoom = () => {
 
   const formSubmitted = (event) => {
     event.preventDefault();
-    console.log(event);
+    // this will be used to submit a fom
   };
 
   return (
