@@ -10,6 +10,10 @@ const AddRoom = () => {
     price: 0,
   });
 
+  const formInputChange = (event) => {
+    event.preventDefault();
+    console.log(event);
+  };
   const formSubmitted = (event) => {
     event.preventDefault();
     // this will be used to submit a fom
@@ -20,32 +24,47 @@ const AddRoom = () => {
       <div>
         <label>
           Photo
-          <input type="text" name="photo" id="photo" />
+          <input
+            type="text"
+            name="photo"
+            id="photo"
+            value={formData.photo}
+            onChange={formInputChange}
+          />
         </label>
       </div>
       <div>
         <label>
           Name
-          <input type="text" name="name" id="name" />
+          <input type="text" name="name" id="name" value={formData.name} />
         </label>
       </div>
       <div>
         {" "}
         <label>
           Stars
-          <input type="number" name="star" id="star" />
+          <input type="number" name="star" id="star" value={formData.star} />
         </label>
       </div>
       <div>
         <label>
           Number people
-          <input type="number" name="no-allowed" id="no-allowed" />
+          <input
+            type="number"
+            name="allowed"
+            id="allowed"
+            value={formData.allowed}
+          />
         </label>
       </div>
       <div>
         <label>
           Description
-          <textarea name="description" id="description" />
+          <textarea
+            name="description"
+            id="description"
+            value={formData.description}
+          />
         </label>
       </div>
       <button type="submit">Add Room</button>
