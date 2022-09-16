@@ -25,64 +25,57 @@ const AddRoom = () => {
   return (
     <form action="/" onSubmit={formSubmitted}>
       <div>
-        <label>
-          Photo
-          <input
-            type="text"
-            name="photo"
-            id="photo"
-            value={formData.photo}
-            onChange={formInputChange}
-          />
-        </label>
+        <label htmlFor="photo">Photo</label>
+        <input
+          type="text"
+          name="photo"
+          id="photo"
+          value={formData.photo}
+          onChange={formInputChange}
+        />
       </div>
       <div>
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={formData.name}
-            onChange={formInputChange}
-          />
-        </label>
+        <label htmlFor="name">Name</label>
+
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={formData.name}
+          onChange={formInputChange}
+        />
       </div>
       <div>
         {" "}
-        <label>
-          Stars
-          <input
-            type="number"
-            name="star"
-            id="star"
-            value={formData.star}
-            onChange={formInputChange}
-          />
-        </label>
+        <label htmlFor="star">Stars</label>
+        <input
+          type="number"
+          name="star"
+          id="star"
+          value={formData.star}
+          onChange={formInputChange}
+        />
       </div>
       <div>
-        <label>
-          Number people
-          <input
-            type="number"
-            name="personsAllowed"
-            id="personsAllowed"
-            value={formData.allowed}
-            onChange={formInputChange}
-          />
-        </label>
+        <label htmlFor="personsAllowed">Number people</label>
+
+        <input
+          type="number"
+          name="personsAllowed"
+          id="personsAllowed"
+          value={formData.allowed}
+          onChange={formInputChange}
+        />
       </div>
       <div>
-        <label>
-          Description
-          <textarea
-            name="description"
-            id="description"
-            value={formData.description}
-            onChange={formInputChange}
-          />
-        </label>
+        <label htmlFor="description">Description</label>
+
+        <textarea
+          name="description"
+          id="description"
+          value={formData.description}
+          onChange={formInputChange}
+        />
       </div>
       <button type="submit">Add Room</button>
     </form>
