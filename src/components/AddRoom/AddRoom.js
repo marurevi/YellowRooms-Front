@@ -40,14 +40,26 @@ const AddRoom = () => {
       <div>
         <label>
           Name
-          <input type="text" name="name" id="name" value={formData.name} />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={formData.name}
+            onChange={formInputChange}
+          />
         </label>
       </div>
       <div>
         {" "}
         <label>
           Stars
-          <input type="number" name="star" id="star" value={formData.star} />
+          <input
+            type="number"
+            name="star"
+            id="star"
+            value={formData.star}
+            onChange={formInputChange}
+          />
         </label>
       </div>
       <div>
@@ -55,9 +67,10 @@ const AddRoom = () => {
           Number people
           <input
             type="number"
-            name="allowed"
-            id="allowed"
+            name="personsAllowed"
+            id="personsAllowed"
             value={formData.allowed}
+            onChange={formInputChange}
           />
         </label>
       </div>
@@ -68,6 +81,7 @@ const AddRoom = () => {
             name="description"
             id="description"
             value={formData.description}
+            onChange={formInputChange}
           />
         </label>
       </div>
