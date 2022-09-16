@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 
 const AddRoom = () => {
+  const formSubmitted = (event) => {
+    event.preventDefault();
+    console.log(event);
+  };
+
   return (
-    <form action="/">
+    <form action="/" onSubmit={formSubmitted}>
       <div>
         <label>
           Photo
