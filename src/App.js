@@ -7,18 +7,15 @@ import AddRoom from './components/AddRoom/AddRoom';
 import DeleteRoom from './components/DeleteRoom/DeleteRoom';
 import Reservations from './components/Reservations/Reservations';
 import Reserve from './components/Reserve/Reserve';
-import SignUp from './components/SignUp/SignUp';
-import Login from './components/Login/Login';
 import Detail from './components/Detail/Detail';
+import SignUp from './components/SignUp/SignUp';
 
 const App = () => (
   <div className="App">
     <BrowserRouter>
-      <h1>Yellow Rooms</h1>
       <Header />
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/Rooms/*" element={<Rooms />} />
         <Route path="/Rooms/:id" element={<Detail />} />
