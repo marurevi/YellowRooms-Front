@@ -1,31 +1,41 @@
 {
   "posts": [
     {
+      "author": "typicode",
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "title": "json-server"
+    }
+  ],
+  "rooms": [
+    {
+      "description": "this is rom description text",
+      "person allowed": 1,
+      "photo": "https://www.kozmohotelbudapest.com/wp-content/uploads/2019/05/Kozmo-Luxury-Hotel-GCA-BUDAPEST-Room-V05-FINAL-000.jpg",
+      "price": 0,
+      "room name": "room one",
+      "start": 0
     }
   ],
   "users": [
     {
+      "id": 1,
       "name": "axel",
-      "password": "15684",
-      "id": 1
+      "password": "15684"
     },
     {
+      "id": 2,
       "name": "andres",
-      "password": "1568das",
-      "id": 2
+      "password": "1568das"
     },
     {
+      "id": 3,
       "name": "mariana",
-      "password": "8915",
-      "id": 3
+      "password": "8915"
     },
     {
+      "id": 4,
       "name": "tadesse",
-      "password": "4687",
-      "id": 4
+      "password": "4687"
     }
   ]
 }
