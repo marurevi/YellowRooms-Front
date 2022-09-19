@@ -1,4 +1,4 @@
-import { sendGet } from "../../API/api";
+import { sendGet, sendDelete } from "../../API/api";
 const GET_ROOMS = "details/rooms/GET_ROOMS";
 const DELETE_ROOM = "details/rooms/DELETE_ROOM";
 export const getRoomsActionCreator = () => async (dispatch) => {

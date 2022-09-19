@@ -8,8 +8,9 @@ export const sendGet = async (custom = "") => {
 };
 
 // TODO: send delete,
-export const sendDelete = async ({ url = baseUrl, id = "" } = {}) => {
-  return axios.delete(url + id).then((response) => {
+export const sendDelete = async (custom) => {
+  return axios.delete(baseUrl + custom).then((response) => {
     console.log(response.status);
+    return response.status;
   });
 };
