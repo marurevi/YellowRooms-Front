@@ -1,25 +1,27 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { deleteRoomActionCreator } from "../../Redux/Rooms/rooms";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { deleteRoomActionCreator } from '../../Redux/Rooms/rooms';
 
-export default function DeleteRoom(props) {
+const DeleteRoom = ({ id = null, name = 'Delete Room' }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { id, name, type } = props;
   const deleteRoom = (e) => {
     e.preventDefault();
     dispatch(deleteRoomActionCreator(id));
-    navigate("/rooms");
-    console.log("deleting room");
+    navigate('/rooms');
   };
-  return type == "button" ? (
+  return (
     <button type="button" onClick={deleteRoom}>
       {name}
     </button>
-  ) : (
-    <a href="#" onClick={deleteRoom}>
-      {name}
-    </a>
   );
-}
+};
+
+DeleteRoom.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+export default DeleteRoom;

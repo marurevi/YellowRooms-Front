@@ -1,12 +1,13 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import DeleteRoom from "../partials/DeleteRoom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import DeleteRoom from '../partials/DeleteRoom';
+
 const Detail = () => {
   let { id } = useParams();
-  id = id?.split("=")[1];
+  id = id?.split('=')[1];
   const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id === Number(id))[0]
+    (state) => state.rooms.filter((room) => room.id === Number(id))[0],
   );
   return room ? (
     <div>
@@ -29,7 +30,7 @@ const Detail = () => {
           <span>{room.price}</span>
         </div>
         <div>
-          <DeleteRoom name="Delete room" type="button" id={room.id} />
+          <DeleteRoom name="Delete room" id={room.id} />
         </div>
       </aside>
     </div>
