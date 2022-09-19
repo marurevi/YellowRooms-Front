@@ -11,7 +11,6 @@ const Rooms = () => {
   useEffect(() => {
     dispatch(getRoomsActionCreator());
   }, []);
-  const value = `/Rooms/id=${1}`;
   return (
     <>
       <main>
@@ -20,30 +19,28 @@ const Rooms = () => {
       </main>
       {rooms.map((room) => {
         return (
-          <article key={room.id}>
-            <div>
-              <img src={room.photo} alt={room.room_name} />
-            </div>
-            <h3>{room.room_name}</h3>
-            <p>{room.description}</p>
-            <section>
-              <span>
-                <TiSocialFacebook />
-              </span>
-              <span>
-                <RiTwitterFill />
-              </span>
-              <span>
-                <SiInstagram />
-              </span>
-            </section>
-          </article>
+          <NavLink className="link" to={`/rooms/id=${room.id}`}>
+            <article key={room.id}>
+              <div>
+                <img src={room.photo} alt={room.room_name} />
+              </div>
+              <h3>{room.room_name}</h3>
+              <p>{room.description}</p>
+              <section>
+                <span>
+                  <TiSocialFacebook />
+                </span>
+                <span>
+                  <RiTwitterFill />
+                </span>
+                <span>
+                  <SiInstagram />
+                </span>
+              </section>
+            </article>
+          </NavLink>
         );
       })}
-      <h2>Rooms</h2>
-      <NavLink className="link" to={value}>
-        Detail
-      </NavLink>
     </>
   );
 };

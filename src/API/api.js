@@ -7,7 +7,7 @@ export const sendGet = async (custom = "") => {
   return axios.get(baseUrl + custom).then((response) => response.data);
 };
 
-// TODO: send delete,
+// Custom route must be provided with ID for destroy to find the room
 export const sendDelete = async (custom) => {
   return axios.delete(baseUrl + custom).then((response) => {
     console.log(response.status);
