@@ -1,9 +1,15 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Reservation from './Reservation';
+import { getReservations } from '../../Redux/Reservations/Reservations';
 
 const Reservations = () => {
   const reservations = useSelector((state) => state.reservations);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getReservations());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return reservations[0] ? (
     <div>
