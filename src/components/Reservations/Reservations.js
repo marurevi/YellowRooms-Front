@@ -1,20 +1,11 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Reservation from './Reservation';
 
 const Reservations = () => {
-  const [reservations, setReservations] = useState([]);
-  const reservationsURL = 'http://localhost:3001/reservations';
+  const reservations = useSelector((state) => state.reservations);
 
-  React.useEffect(() => {
-    axios.get(reservationsURL).then((response) => {
-      setReservations(response.data);
-    });
-  }, []);
-
-  if (!reservations[0]) return null;
-
-  return (
+  return reservations[0] ? (
     <div>
       <h2>MY RESERVATIONS</h2>
       {reservations.map((room) => (
@@ -28,6 +19,8 @@ const Reservations = () => {
         />
       ))}
     </div>
+  ) : (
+    <h2>There are not any reservations</h2>
   );
 };
 
