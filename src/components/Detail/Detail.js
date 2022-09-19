@@ -6,7 +6,7 @@ const Detail = () => {
   let { id } = useParams();
   id = id?.split("=")[1];
   const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id === Number(2))[0]
+    (state) => state.rooms.filter((room) => room.id === Number(id))[0]
   );
   return room ? (
     <div>

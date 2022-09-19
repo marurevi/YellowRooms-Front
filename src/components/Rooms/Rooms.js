@@ -19,8 +19,8 @@ const Rooms = () => {
       </main>
       {rooms.map((room) => {
         return (
-          <NavLink className="link" to={`/rooms/id=${room.id}`}>
-            <article key={room.id}>
+          <NavLink className="link" to={`/Rooms/id=${room.id}`} key={room.id}>
+            <article>
               <div>
                 <img src={room.photo} alt={room.room_name} />
               </div>
