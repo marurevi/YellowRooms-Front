@@ -5,7 +5,6 @@ const GET_ROOMS = "details/rooms/GET_ROOMS";
 export const getRoomsActionCreator = () => (dispatch) => {
   axios.get("http://localhost:3001/rooms").then((response) => {
     const rooms = response.data;
-    console.log(rooms);
     dispatch({ type: GET_ROOMS, payload: rooms });
   });
 };
