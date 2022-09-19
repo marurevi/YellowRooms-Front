@@ -10,11 +10,12 @@ const Reservations = () => {
     dispatch(getReservations());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  const userReservations = reservations.filter((reserve) => reserve.user_id === 4);
 
-  return reservations[0] ? (
+  return userReservations[0] ? (
     <div>
       <h2>MY RESERVATIONS</h2>
-      {reservations.map((room) => (
+      {userReservations.map((room) => (
         <Reservation
           key={room.id}
           roomId={room.room_id}

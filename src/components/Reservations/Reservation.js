@@ -40,8 +40,8 @@ const Reservation = (props) => {
 export default Reservation;
 
 Reservation.propTypes = {
-  userId: PropTypes.string,
-  roomId: PropTypes.string,
+  userId: PropTypes.number,
+  roomId: PropTypes.number,
   startDate: PropTypes.string,
   endDate: PropTypes.string,
   city: PropTypes.string,

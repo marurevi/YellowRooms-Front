@@ -41,40 +41,40 @@
   ],
   "reservations": [
     {
-      "user_id": "1",
-      "room_id": "1",
+      "user_id": 1,
+      "room_id": 1,
       "start_date": "15/06/30",
       "end_date": "15/06/31",
       "city": "Miami",
       "id": 1
     },
     {
-      "user_id": "2",
-      "room_id": "2",
+      "user_id": 2,
+      "room_id": 2,
       "start_date": "15/06/30",
       "end_date": "15/06/31",
       "city": "Bunos Aires",
       "id": 2
     },
     {
-      "user_id": "1",
-      "room_id": "3",
+      "user_id": 1,
+      "room_id": 3,
       "start_date": "15/06/30",
       "end_date": "15/06/31",
       "city": "Quito",
       "id": 3
     },
     {
-      "user_id": "4",
-      "room_id": "4",
+      "user_id": 4,
+      "room_id": 4,
       "start_date": "15/06/30",
       "end_date": "15/06/31",
       "city": "Rio de Janeiro",
       "id": 4
     },
     {
-      "user_id": "4",
-      "room_id": "5",
+      "user_id": 4,
+      "room_id": 5,
       "start_date": "15/06/30",
       "end_date": "15/06/31",
       "city": "Barcelona",
