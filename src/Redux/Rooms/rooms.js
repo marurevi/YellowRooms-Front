@@ -7,6 +7,7 @@ export const getRoomsActionCreator = () => async (dispatch) => {
 };
 
 // REVIEW: delete method
+// NOTE: his method is not tested yet
 export const deleteRoomActionCreator = (id) => async (dispatch) => {
   const status = await sendDelete(`rooms/${id}`);
   dispatch({ type: DELETE_ROOM, payload: { status, id } });
