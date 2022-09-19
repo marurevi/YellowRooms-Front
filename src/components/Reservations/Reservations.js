@@ -16,7 +16,7 @@ const Reservations = () => {
       <h2>MY RESERVATIONS</h2>
       {reservations.map((room) => (
         <Reservation
-          key={room.Id}
+          key={room.id}
           roomId={room.room_id}
           userId={room.user_id}
           startDate={room.start_date}
