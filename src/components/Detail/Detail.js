@@ -1,16 +1,16 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 const Detail = () => {
   let { id } = useParams();
-  id = id?.split("=")[1];
-  console.log(`param is ${id}`);
+  id = id?.split('=')[1];
   const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id == id)[0]
+    (state) => state.rooms.filter((room) => room.id === Number(id))[0],
   );
   return room ? (
     <div>
-      <img src={room.photo} placeholder="Room image"></img>
+      <img src={room.photo} alt="Room" />
       <aside>
         <div>
           <span>Stars</span>

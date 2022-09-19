@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
-const GET_ROOMS = "details/rooms/GET_ROOMS";
+const GET_ROOMS = 'details/rooms/GET_ROOMS';
 
 export const getRoomsActionCreator = () => (dispatch) => {
-  axios.get("http://localhost:3001/rooms").then((response) => {
+  axios.get('http://localhost:3001/rooms').then((response) => {
     const rooms = response.data;
     dispatch({ type: GET_ROOMS, payload: rooms });
   });
