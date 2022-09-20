@@ -3,22 +3,25 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 const Reserve = () => {
-  const rooms = useSelector((state) => state.rooms);
-  const [userId, setUserId] = useState(0);
-  const [roomId, setRoomId] = useState(0);
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDATE] = useState('');
-  const [city, setCity] = useState('');
   const reservationsURL = 'http://localhost:3001/reservations';
+  const rooms = useSelector((state) => state.rooms);
+  const [form, setForm] = useState({
+    user_id: 0,
+    room_id: 0,
+    firstName: '',
+    start_date: '',
+    end_date: '',
+    city: '',
+  });
 
   const reserveRoomSubmit = async (e) => {
     e.preventDefault();
     axios.post(reservationsURL, {
-      user_id: parseInt(userId, 10),
-      room_id: parseInt(roomId, 10),
-      start_date: startDate,
-      end_date: endDate,
-      city,
+      user_id: parseInt(form.user_id, 10),
+      room_id: parseInt(form.room_id, 10),
+      start_date: form.start_date,
+      end_date: form.end_date,
+      city: form.city,
     })
       .then((response) => {
         if (response.status === 201) {
@@ -27,20 +30,28 @@ const Reserve = () => {
       });
   };
 
+  const onChange = (e) => {
+    setForm((prevForm) => ({
+      ...prevForm,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <div>
-      <h2>Reserve Form</h2>
+      <h2>Reserve Room</h2>
       <form onSubmit={reserveRoomSubmit}>
-        <input onChange={(e) => setUserId(e.target.value)} className="signInput" type="number" placeholder="User" required />
-        <select onChange={(e) => setRoomId(e.target.value)} required>
+        <input onChange={onChange} name="user_id" className="signInput" type="number" placeholder="User" required />
+        <select onChange={onChange} name="room_id" required>
+          <option>SELECT OPTION</option>
           {rooms.map((room) => (
             <option key={room.id} value={room.id}>{room.name}</option>
           ))}
         </select>
-        <input onChange={(e) => setStartDate(e.target.value)} className="signInput" type="text" placeholder="Start reservation" required />
-        <input onChange={(e) => setEndDATE(e.target.value)} className="signInput" type="text" placeholder="End reservation" required />
-        <input onChange={(e) => setCity(e.target.value)} className="signInput" type="text" placeholder="City" required />
-        <button type="submit">Create Reservation</button>
+        <input onChange={onChange} name="start_date" className="signInput" type="text" placeholder="Start reservation" required />
+        <input onChange={onChange} name="end_date" className="signInput" type="text" placeholder="End reservation" required />
+        <input onChange={onChange} name="city" className="signInput" type="text" placeholder="City" required />
+        <button disabled={form.room_id === 0 || form.room_id === 'SELECT OPTION'} type="submit">Create Reservation</button>
       </form>
     </div>
   );
