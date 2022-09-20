@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AddRoom = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    star: 0,
-    personsAllowed: 1,
-    photo: '',
-    description: '',
+    name: "",
+    stars: 0,
+    persons_allowed: 1,
+    photo: "",
+    description: "",
     price: 0,
   });
 
@@ -19,7 +19,6 @@ const AddRoom = () => {
   };
   const formSubmitted = (event) => {
     event.preventDefault();
-    // this will be used to submit a fom
   };
 
   return (
@@ -49,14 +48,14 @@ const AddRoom = () => {
         </label>
       </div>
       <div>
-        {' '}
-        <label htmlFor="star">
+        {" "}
+        <label htmlFor="stars">
           Stars
           <input
             type="number"
-            name="star"
-            id="star"
-            value={formData.star}
+            name="stars"
+            id="stars"
+            value={formData.stars}
             onChange={formInputChange}
           />
         </label>
