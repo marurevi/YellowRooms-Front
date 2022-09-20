@@ -7,7 +7,7 @@ const DeleteRoom = () => {
     <div>
       {rooms.map((room) => (
         <div key={room.id}>
-          <h3>{room.name}</h3>
+          <p>{room.name}</p>
           <div>
             <DeleteButton name="Delete room" id={room.id} />
           </div>
