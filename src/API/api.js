@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
-export const baseUrl = "http://localhost:3001/";
+export const baseUrl = 'http://localhost:3001/';
 
 // custom is to alternate the endpoint
-export async function sendGet(custom = "") {
+export async function sendGet(custom = '') {
   return axios.get(baseUrl + custom).then((response) => response.data);
 }
 
@@ -13,7 +13,9 @@ export async function sendDelete(custom) {
 }
 
 export async function sendPost(custom, data) {
-  return await axios.post(baseUrl + custom, {
-    data,
-  });
+  return axios
+    .post(baseUrl + custom, {
+      data,
+    })
+    .then((response) => response);
 }

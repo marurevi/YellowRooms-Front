@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { sendPost } from "../../API/api";
+import React, { useState } from 'react';
+import { sendPost } from '../../API/api';
+
 const AddRoom = () => {
   const initialFromState = {
-    name: "",
+    name: '',
     stars: 0,
     persons_allowed: 1,
-    photo: "",
-    description: "",
+    photo: '',
+    description: '',
     price: 0,
-    status: "",
+    status: '',
   };
   const [formData, setFormData] = useState(initialFromState);
 
@@ -17,22 +18,20 @@ const AddRoom = () => {
     setFormData((oldState) => ({
       ...oldState,
       [event.target.name]: event.target.value,
-      status: "",
+      status: '',
     }));
   };
   const formSubmitted = async (event) => {
     event.preventDefault();
-    console.log(formData);
-    const status = await sendPost("rooms", formData);
-    console.log(status);
-    if (status.statusText === "Created") {
-      setFormData({ ...initialFromState, status: "Created" });
+    const status = await sendPost('rooms', formData);
+    if (status.statusText === 'Created') {
+      setFormData({ ...initialFromState, status: 'Created' });
     }
   };
 
   return (
     <>
-      {formData.status === "Created" && <div>Room is created</div>}
+      {formData.status === 'Created' && <div>Room is created</div>}
       <form action="/" onSubmit={formSubmitted}>
         <div>
           <label htmlFor="photo">
@@ -59,7 +58,7 @@ const AddRoom = () => {
           </label>
         </div>
         <div>
-          {" "}
+          {' '}
           <label htmlFor="stars">
             Stars
             <input

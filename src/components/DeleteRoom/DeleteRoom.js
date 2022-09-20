@@ -1,6 +1,7 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import DeleteButton from "../partials/DeleteRoom";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import DeleteButton from '../partials/DeleteRoom';
+
 const DeleteRoom = () => {
   const rooms = useSelector((store) => store.rooms);
   return rooms.length > 0 ? (
