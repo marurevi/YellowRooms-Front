@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { sendPost } from "../../API/api";
 const AddRoom = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -17,8 +17,10 @@ const AddRoom = () => {
       [event.target.name]: event.target.value,
     }));
   };
-  const formSubmitted = (event) => {
+  const formSubmitted = async (event) => {
     event.preventDefault();
+    const status = await sendPost("rooms", formData);
+    console.log(status);
   };
 
   return (
