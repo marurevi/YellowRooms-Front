@@ -33,9 +33,6 @@ const Detail = () => {
           <span>description</span>
           <span>{room.description}</span>
         </div>
-        <div>
-          <DeleteRoom name="Delete room" id={room.id} />
-        </div>
       </aside>
     </div>
   ) : (
