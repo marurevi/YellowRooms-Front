@@ -18,15 +18,19 @@ const Detail = () => {
         </div>
         <div>
           <span>Room name</span>
-          <span>{room.room_name}</span>
+          <span>{room.name}</span>
         </div>
         <div>
           <span>max number of guest</span>
-          <span>{room.person_allowed}</span>
+          <span>{room.persons_allowed}</span>
         </div>
         <div>
           <span>price</span>
           <span>{room.price}</span>
+        </div>
+        <div>
+          <span>description</span>
+          <span>{room.description}</span>
         </div>
       </aside>
     </div>
