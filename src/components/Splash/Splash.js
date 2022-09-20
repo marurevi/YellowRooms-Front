@@ -28,7 +28,7 @@ const Splash = () => {
       <ul className="registration-links">
         <form onSubmit={userSubmit}>
           <input onChange={(e) => setUserName(e.target.value)} className="loginInput" type="text" placeholder="User" required />
-          <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" required />
+          <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="password" placeholder="Password" required />
           <button type="submit">Login</button>
         </form>
         <li><NavLink className="link" to="signup">REGISTER</NavLink></li>
