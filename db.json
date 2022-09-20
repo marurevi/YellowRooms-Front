@@ -1,11 +1,4 @@
 {
-  "posts": [
-    {
-      "author": "typicode",
-      "id": 1,
-      "title": "json-server"
-    }
-  ],
   "rooms": [
     {
       "description": "this is rom description text",
