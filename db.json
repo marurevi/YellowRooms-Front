@@ -1,11 +1,4 @@
 {
-  "posts": [
-    {
-      "author": "typicode",
-      "id": 1,
-      "title": "json-server"
-    }
-  ],
   "rooms": [
     {
       "description": "this is rom description text",
@@ -226,7 +219,7 @@
     {
       "id": 1,
       "name": "axel",
-      "password": "15684"
+      "password": "123"
     },
     {
       "id": 2,
@@ -242,6 +235,48 @@
       "id": 4,
       "name": "tadesse",
       "password": "4687"
+    }
+  ],
+  "reservations": [
+    {
+      "user_id": 1,
+      "room_id": 1,
+      "start_date": "15/06/30",
+      "end_date": "15/06/31",
+      "city": "Miami",
+      "id": 1
+    },
+    {
+      "user_id": 2,
+      "room_id": 2,
+      "start_date": "15/06/30",
+      "end_date": "15/06/31",
+      "city": "Bunos Aires",
+      "id": 2
+    },
+    {
+      "user_id": 1,
+      "room_id": 3,
+      "start_date": "15/06/30",
+      "end_date": "15/06/31",
+      "city": "Quito",
+      "id": 3
+    },
+    {
+      "user_id": 4,
+      "room_id": 4,
+      "start_date": "15/06/30",
+      "end_date": "15/06/31",
+      "city": "Rio de Janeiro",
+      "id": 4
+    },
+    {
+      "user_id": 4,
+      "room_id": 5,
+      "start_date": "15/06/30",
+      "end_date": "15/06/31",
+      "city": "Barcelona",
+      "id": 5
     }
   ]
 }
