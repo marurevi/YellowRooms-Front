@@ -1,17 +1,27 @@
-import axios from 'axios';
+import { sendGet, sendDelete } from '../../API/api';
 
 const GET_ROOMS = 'details/rooms/GET_ROOMS';
-
-export const getRoomsActionCreator = () => (dispatch) => {
-  axios.get('http://localhost:3001/rooms').then((response) => {
-    const rooms = response.data;
-    dispatch({ type: GET_ROOMS, payload: rooms });
-  });
+const DELETE_ROOM = 'details/rooms/DELETE_ROOM';
+export const getRoomsActionCreator = () => async (dispatch) => {
+  const rooms = await sendGet('rooms');
+  dispatch({ type: GET_ROOMS, payload: rooms });
 };
+
+// REVIEW: delete method
+// NOTE: his method is not tested yet
+export const deleteRoomActionCreator = (id) => async (dispatch) => {
+  const status = await sendDelete(`rooms/${id}`);
+  dispatch({ type: DELETE_ROOM, payload: { status, id } });
+};
+
 const roomsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_ROOMS:
       return action.payload;
+    case DELETE_ROOM:
+      return action.payload.status
+        ? [...state].filter((room) => room.id !== action.payload.id)
+        : state;
     default:
       return state;
   }

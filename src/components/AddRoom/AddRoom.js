@@ -1,91 +1,101 @@
 import React, { useState } from 'react';
+import { sendPost } from '../../API/api';
 
 const AddRoom = () => {
-  const [formData, setFormData] = useState({
+  const initialFromState = {
     name: '',
-    star: 0,
-    personsAllowed: 1,
+    stars: 0,
+    persons_allowed: 1,
     photo: '',
     description: '',
     price: 0,
-  });
+    status: '',
+  };
+  const [formData, setFormData] = useState(initialFromState);
 
   const formInputChange = (event) => {
     event.preventDefault();
     setFormData((oldState) => ({
       ...oldState,
       [event.target.name]: event.target.value,
+      status: '',
     }));
   };
-  const formSubmitted = (event) => {
+  const formSubmitted = async (event) => {
     event.preventDefault();
-    // this will be used to submit a fom
+    const status = await sendPost('rooms', formData);
+    if (status.statusText === 'Created') {
+      setFormData({ ...initialFromState, status: 'Created' });
+    }
   };
 
   return (
-    <form action="/" onSubmit={formSubmitted}>
-      <div>
-        <label htmlFor="photo">
-          Photo
-          <input
-            type="text"
-            name="photo"
-            id="photo"
-            value={formData.photo}
-            onChange={formInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="name">
-          Name
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={formData.name}
-            onChange={formInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        {' '}
-        <label htmlFor="star">
-          Stars
-          <input
-            type="number"
-            name="star"
-            id="star"
-            value={formData.star}
-            onChange={formInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="personsAllowed">
-          Number people
-          <input
-            type="number"
-            name="personsAllowed"
-            id="personsAllowed"
-            value={formData.allowed}
-            onChange={formInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="description">
-          Description
-          <textarea
-            name="description"
-            id="description"
-            value={formData.description}
-            onChange={formInputChange}
-          />
-        </label>
-      </div>
-      <button type="submit">Add Room</button>
-    </form>
+    <>
+      {formData.status === 'Created' && <div>Room is created</div>}
+      <form action="/" onSubmit={formSubmitted}>
+        <div>
+          <label htmlFor="photo">
+            Photo
+            <input
+              type="text"
+              name="photo"
+              id="photo"
+              value={formData.photo}
+              onChange={formInputChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="name">
+            Name
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={formData.name}
+              onChange={formInputChange}
+            />
+          </label>
+        </div>
+        <div>
+          {' '}
+          <label htmlFor="stars">
+            Stars
+            <input
+              type="number"
+              name="stars"
+              id="stars"
+              value={formData.stars}
+              onChange={formInputChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="personsAllowed">
+            Number people
+            <input
+              type="number"
+              name="personsAllowed"
+              id="personsAllowed"
+              value={formData.allowed}
+              onChange={formInputChange}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="description">
+            Description
+            <textarea
+              name="description"
+              id="description"
+              value={formData.description}
+              onChange={formInputChange}
+            />
+          </label>
+        </div>
+        <button type="submit">Add Room</button>
+      </form>
+    </>
   );
 };
 
