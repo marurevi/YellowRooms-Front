@@ -1,4 +1,46 @@
 {
+  "reservations": [
+    {
+      "city": "Miami",
+      "end_date": "15/06/31",
+      "id": 1,
+      "room_id": 1,
+      "start_date": "15/06/30",
+      "user_id": 1
+    },
+    {
+      "city": "Bunos Aires",
+      "end_date": "15/06/31",
+      "id": 2,
+      "room_id": 2,
+      "start_date": "15/06/30",
+      "user_id": 2
+    },
+    {
+      "city": "Quito",
+      "end_date": "15/06/31",
+      "id": 3,
+      "room_id": 3,
+      "start_date": "15/06/30",
+      "user_id": 1
+    },
+    {
+      "city": "Rio de Janeiro",
+      "end_date": "15/06/31",
+      "id": 4,
+      "room_id": 4,
+      "start_date": "15/06/30",
+      "user_id": 4
+    },
+    {
+      "city": "Barcelona",
+      "end_date": "15/06/31",
+      "id": 5,
+      "room_id": 5,
+      "start_date": "15/06/30",
+      "user_id": 4
+    }
+  ],
   "rooms": [
     {
       "description": "this is rom description text",
@@ -35,184 +77,6 @@
       "photo": "https://www.kozmohotelbudapest.com/wp-content/uploads/2019/05/Kozmo-Luxury-Hotel-GCA-BUDAPEST-Room-V05-FINAL-000.jpg",
       "price": 0,
       "stars": 0
-    },
-    {
-      "data": {
-        "name": "gsdfgdsfg",
-        "stars": "234",
-        "persons_allowed": 1,
-        "photo": "dsfgdfs",
-        "description": "sdfsdf",
-        "price": 0,
-        "personsAllowed": "234"
-      },
-      "id": 2345467
-    },
-    {
-      "data": {
-        "name": "reterwt",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "ertywert",
-        "description": "dsfafdsdf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345468
-    },
-    {
-      "data": {
-        "name": "reterwt",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "ertywert",
-        "description": "dsfafdsdf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345469
-    },
-    {
-      "data": {
-        "name": "reterwt",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "ertywert",
-        "description": "dsfafdsdf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345470
-    },
-    {
-      "data": {
-        "name": "reterwt",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "ertywert",
-        "description": "dsfafdsdf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345471
-    },
-    {
-      "data": {
-        "name": "reterwt",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "ertywert",
-        "description": "dsfafdsdf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345472
-    },
-    {
-      "data": {
-        "name": "reterwt",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "ertywert",
-        "description": "dsfafdsdf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345473
-    },
-    {
-      "data": {
-        "name": "",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "",
-        "description": "",
-        "price": 0,
-        "status": ""
-      },
-      "id": 2345474
-    },
-    {
-      "data": {
-        "name": "",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "",
-        "description": "",
-        "price": 0,
-        "status": ""
-      },
-      "id": 2345475
-    },
-    {
-      "data": {
-        "name": "",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "",
-        "description": "",
-        "price": 0,
-        "status": ""
-      },
-      "id": 2345476
-    },
-    {
-      "data": {
-        "name": "retre",
-        "stars": "0333333333333",
-        "persons_allowed": 1,
-        "photo": "ereeeeeeeeetw",
-        "description": "ertert",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "345"
-      },
-      "id": 2345477
-    },
-    {
-      "data": {
-        "name": "asdasd",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "dasd",
-        "description": "33333333333334",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "23"
-      },
-      "id": 2345478
-    },
-    {
-      "data": {
-        "name": "werwer",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "werwer",
-        "description": "dggsdfg",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "234"
-      },
-      "id": 2345479
-    },
-    {
-      "data": {
-        "name": "sadfsdaf",
-        "stars": 0,
-        "persons_allowed": 1,
-        "photo": "sdfasdf",
-        "description": "asfasdfsadf",
-        "price": 0,
-        "status": "",
-        "personsAllowed": "43534"
-      },
-      "id": 2345480
     }
   ],
   "users": [
@@ -235,48 +99,6 @@
       "id": 4,
       "name": "tadesse",
       "password": "4687"
-    }
-  ],
-  "reservations": [
-    {
-      "user_id": 1,
-      "room_id": 1,
-      "start_date": "15/06/30",
-      "end_date": "15/06/31",
-      "city": "Miami",
-      "id": 1
-    },
-    {
-      "user_id": 2,
-      "room_id": 2,
-      "start_date": "15/06/30",
-      "end_date": "15/06/31",
-      "city": "Bunos Aires",
-      "id": 2
-    },
-    {
-      "user_id": 1,
-      "room_id": 3,
-      "start_date": "15/06/30",
-      "end_date": "15/06/31",
-      "city": "Quito",
-      "id": 3
-    },
-    {
-      "user_id": 4,
-      "room_id": 4,
-      "start_date": "15/06/30",
-      "end_date": "15/06/31",
-      "city": "Rio de Janeiro",
-      "id": 4
-    },
-    {
-      "user_id": 4,
-      "room_id": 5,
-      "start_date": "15/06/30",
-      "end_date": "15/06/31",
-      "city": "Barcelona",
-      "id": 5
     }
   ]
 }
