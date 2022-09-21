@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+
 const Reserve = () => {
   let { room_id: roomId } = useParams();
   roomId = roomId?.split("=")[1];
-  console.log(roomId);
   const room = useSelector(
     (state) => state.rooms.filter((room) => room.id === Number(roomId))[0]
   );

@@ -1,8 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import ReserveRoom from "../partials/ReserveRoom";
+import { useNavigate } from "react-router-dom";
+
 const Detail = () => {
+  const navigator = useNavigate();
   let { id } = useParams();
   id = id?.split("=")[1];
   const room = useSelector(
@@ -33,7 +35,12 @@ const Detail = () => {
           <span>{room.description}</span>
         </div>
         <div>
-          <ReserveRoom roomId={room.id} />
+          <button
+            type="button"
+            onClick={() => navigator(`/Reserve/room_id=${room.id}`)}
+          >
+            Reserve Room
+          </button>
         </div>
       </aside>
     </div>
