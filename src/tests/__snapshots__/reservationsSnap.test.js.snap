@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservations snapshot 1`] = `
+<h2>
+  There are not any reservations
+</h2>
+`;
