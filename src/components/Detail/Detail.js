@@ -1,12 +1,12 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-
+import React from "react";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import ReserveRoom from "../partials/ReserveRoom";
 const Detail = () => {
   let { id } = useParams();
-  id = id?.split('=')[1];
+  id = id?.split("=")[1];
   const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id === Number(id))[0],
+    (state) => state.rooms.filter((room) => room.id === Number(id))[0]
   );
   return room ? (
     <div>
@@ -31,6 +31,9 @@ const Detail = () => {
         <div>
           <span>description</span>
           <span>{room.description}</span>
+        </div>
+        <div>
+          <ReserveRoom roomId={room.id} />
         </div>
       </aside>
     </div>
