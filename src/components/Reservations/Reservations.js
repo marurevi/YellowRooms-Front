@@ -2,11 +2,13 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Reservation from './Reservation';
 import { getReservations } from '../../Redux/Reservations/Reservations';
+import { getRoomsActionCreator } from '../../Redux/Rooms/rooms';
 
 const Reservations = () => {
   const reservations = useSelector((state) => state.reservations);
   const dispatch = useDispatch();
   useEffect(() => {
+    dispatch(getRoomsActionCreator());
     dispatch(getReservations());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

@@ -44,8 +44,8 @@
   "rooms": [
     {
       "description": "this is rom description text",
-      "id": 234566,
-      "name": "room three",
+      "id": 1,
+      "name": "room 1",
       "persons_allowed": 1,
       "photo": "https://www.kozmohotelbudapest.com/wp-content/uploads/2019/05/Kozmo-Luxury-Hotel-GCA-BUDAPEST-Room-V05-FINAL-000.jpg",
       "price": 0,
@@ -53,8 +53,8 @@
     },
     {
       "description": "this is rom description text",
-      "id": 2345466,
-      "name": "room three",
+      "id": 2,
+      "name": "room 2",
       "persons_allowed": 1,
       "photo": "https://www.kozmohotelbudapest.com/wp-content/uploads/2019/05/Kozmo-Luxury-Hotel-GCA-BUDAPEST-Room-V05-FINAL-000.jpg",
       "price": 0,
@@ -62,8 +62,8 @@
     },
     {
       "description": "this is rom description text",
-      "id": 245466,
-      "name": "room three",
+      "id": 3,
+      "name": "room 3",
       "persons_allowed": 1,
       "photo": "https://www.kozmohotelbudapest.com/wp-content/uploads/2019/05/Kozmo-Luxury-Hotel-GCA-BUDAPEST-Room-V05-FINAL-000.jpg",
       "price": 0,
@@ -71,8 +71,8 @@
     },
     {
       "description": "this is rom description text",
-      "id": 23466,
-      "name": "room three",
+      "id": 4,
+      "name": "room 4",
       "persons_allowed": 1,
       "photo": "https://www.kozmohotelbudapest.com/wp-content/uploads/2019/05/Kozmo-Luxury-Hotel-GCA-BUDAPEST-Room-V05-FINAL-000.jpg",
       "price": 0,
