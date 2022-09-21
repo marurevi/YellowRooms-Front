@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 const Reserve = () => {
   let { room_id: roomId } = useParams();
-  roomId = roomId?.split("=")[1];
+  roomId = roomId?.split('=')[1];
   const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id === Number(roomId))[0]
+    (state) => state.rooms.filter((room) => room.id === Number(roomId))[0],
   );
-  const reservationsURL = "http://localhost:3001/reservations";
+  const reservationsURL = 'http://localhost:3001/reservations';
   const [form, setForm] = useState({
     user_id: 0,
-    firstName: "",
-    start_date: "",
-    end_date: "",
-    city: "",
+    firstName: '',
+    start_date: '',
+    end_date: '',
+    city: '',
   });
 
   const reserveRoomSubmit = async (e) => {
@@ -30,7 +30,7 @@ const Reserve = () => {
       })
       .then((response) => {
         if (response.status === 201) {
-          window.location.href = "/Reservations";
+          window.location.href = '/Reservations';
         }
       });
   };
@@ -80,7 +80,7 @@ const Reserve = () => {
           required
         />
         <button
-          disabled={form.room_id === 0 || form.room_id === "SELECT OPTION"}
+          disabled={form.room_id === 0 || form.room_id === 'SELECT OPTION'}
           type="submit"
         >
           Create Reservation
