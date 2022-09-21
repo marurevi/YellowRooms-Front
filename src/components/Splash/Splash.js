@@ -24,15 +24,15 @@ const Splash = () => {
   return (
     <div className="splash-page">
       <img src={mainLogo} alt="mainLogo" className="mainLogo" />
-      <h2>Welcome to Yellow Rooms</h2>
-      <ul className="registration-links">
-        <form onSubmit={userSubmit}>
-          <input onChange={(e) => setUserName(e.target.value)} className="loginInput" type="text" placeholder="User" required />
-          <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" required />
-          <button type="submit">Login</button>
-        </form>
-        <li><NavLink className="link" to="signup">REGISTER</NavLink></li>
-      </ul>
+      <form className="login-form" onSubmit={userSubmit}>
+        <div className="title-splash">
+          <h2 className="welcome">WELCOME</h2>
+          <NavLink className="register-link" to="signup">REGISTER</NavLink>
+        </div>
+        <input onChange={(e) => setUserName(e.target.value)} className="loginInput" type="text" placeholder="User" required />
+        <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" required />
+        <button className="loginBtn" type="submit">LOGIN</button>
+      </form>
     </div>
   );
 };

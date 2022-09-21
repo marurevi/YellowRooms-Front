@@ -1,5 +1,5 @@
 .splash-page {
-  background-color: yellow;
+  background-color: #ffde59;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -10,12 +10,74 @@
   text-decoration: none;
 }
 
-.registration-links {
-  list-style-type: none;
-  padding: 0;
+.welcome {
+  color: #fff;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 40px;
+  text-shadow: 4px 3px 5px #737372;
 }
 
 .mainLogo {
-  width: 80%;
-  margin: 0 auto;
+  width: 270px;
+}
+
+.loginInput {
+  width: 80vw;
+  height: 36px;
+  color: #fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
+  background-color: #ffde59;
+  margin-bottom: 3%;
+  padding: 12px;
+  border: 4px #737372;
+  border-style: dashed;
+  border-radius: 16px;
+}
+
+.loginInput:focus {
+  background: #d0b447;
+}
+
+.register-link {
+  text-decoration: none;
+  width: 30vw;
+  padding: 12px;
+  color: #fff;
+  background-color: #91bd04;
+  border-radius: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 18px;
+}
+
+.register-link:active {
+  background-color: #6f9004;
+}
+
+.login-form {
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.loginBtn {
+  width: 80vw;
+  padding: 12px;
+  color: #fff;
+  background-color: #91bd04;
+  border: 4px #737372;
+  border-radius: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 22px;
+}
+
+.loginBtn:active {
+  background-color: #6f9004;
+}
+
+.title-splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto 3vh auto;
 }
