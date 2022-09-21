@@ -44,9 +44,17 @@
       "city": "sdafasdfsdf",
       "end_date": "sadfasdfsdaf",
       "id": 6,
-      "room_id": "1",
+      "room_id": 1,
       "start_date": "sdfsdf",
       "user_id": 234234
+    },
+    {
+      "user_id": 4,
+      "room_id": 1,
+      "start_date": "45678",
+      "end_date": "467",
+      "city": "6876",
+      "id": 7
     }
   ],
   "rooms": [

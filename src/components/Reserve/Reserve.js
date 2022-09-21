@@ -23,7 +23,7 @@ const Reserve = () => {
     axios
       .post(reservationsURL, {
         user_id: parseInt(form.user_id, 10),
-        room_id: roomId,
+        room_id: parseInt(roomId, 10),
         start_date: form.start_date,
         end_date: form.end_date,
         city: form.city,

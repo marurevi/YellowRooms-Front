@@ -9,6 +9,7 @@ import Reservations from './components/Reservations/Reservations';
 import Reserve from './components/Reserve/Reserve';
 import Detail from './components/Detail/Detail';
 import SignUp from './components/SignUp/SignUp';
+import AllReserves from './components/partials/AllReserves';
 
 const App = () => (
   <div className="App">
@@ -23,6 +24,7 @@ const App = () => (
         <Route path="/DeleteRoom" element={<DeleteRoom />} />
         <Route path="/Reservations" element={<Reservations />} />
         <Route path="/Reserve/:room_id" element={<Reserve />} />
+        <Route path="/Reserve" element={<AllReserves />} />
       </Routes>
     </BrowserRouter>
   </div>
