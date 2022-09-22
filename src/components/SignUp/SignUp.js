@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { sendPost } from "../../API/api";
 const SignUp = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     user: {
       username: "",
@@ -18,7 +20,13 @@ const SignUp = () => {
   const userSubmit = async (e) => {
     e.preventDefault();
     const response = await sendPost("register", user);
-    console.log(response);
+    const token = response.headers.authorization;
+    if (token) {
+      localStorage.setItem("token", token);
+      navigate("/rooms");
+    } else {
+      // TODO: Error handling
+    }
   };
 
   return (
@@ -52,7 +60,7 @@ const SignUp = () => {
           placeholder="Password"
           required
         />
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
