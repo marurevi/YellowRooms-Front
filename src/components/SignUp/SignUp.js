@@ -24,7 +24,7 @@ const SignUp = () => {
       <div>SignUp</div>
       <form onSubmit={userSubmit}>
         <input onChange={(e) => setUserName(e.target.value)} className="signInput" type="text" placeholder="User" required />
-        <input onChange={(e) => setUserPassword(e.target.value)} className="signInput" type="text" placeholder="Password" required />
+        <input onChange={(e) => setUserPassword(e.target.value)} className="signInput" type="password" placeholder="Password" required />
         <button type="submit">Login</button>
       </form>
     </div>

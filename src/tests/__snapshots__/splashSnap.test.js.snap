@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`splash snapshot 1`] = `
+Array [
+  <div
+    className="splash-page"
+  >
+    <img
+      alt="mainLogo"
+      className="mainLogo"
+      src="YELLOW-3.png"
+    />
+    <h2>
+      Welcome to Yellow Rooms
+    </h2>
+    <ul
+      className="registration-links"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <input
+          className="loginInput"
+          onChange={[Function]}
+          placeholder="User"
+          required={true}
+          type="text"
+        />
+        <input
+          className="loginInput"
+          onChange={[Function]}
+          placeholder="Password"
+          required={true}
+          type="password"
+        />
+        <button
+          type="submit"
+        >
+          Login
+        </button>
+      </form>
+      <li>
+        <a
+          className="link"
+          href="/signup"
+          onClick={[Function]}
+        >
+          REGISTER
+        </a>
+      </li>
+    </ul>
+  </div>,
+  ",",
+]
+`;

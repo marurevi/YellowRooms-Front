@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUp snapshot 1`] = `
+Array [
+  <div
+    className="signup-page"
+  >
+    <div>
+      SignUp
+    </div>
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        className="signInput"
+        onChange={[Function]}
+        placeholder="User"
+        required={true}
+        type="text"
+      />
+      <input
+        className="signInput"
+        onChange={[Function]}
+        placeholder="Password"
+        required={true}
+        type="password"
+      />
+      <button
+        type="submit"
+      >
+        Login
+      </button>
+    </form>
+  </div>,
+  ",",
+]
+`;
