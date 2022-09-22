@@ -1,30 +1,58 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-
+import React, { useState } from "react";
+import { sendPost } from "../../API/api";
 const SignUp = () => {
-  const [userName, setUserName] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-  const loginURL = 'http://localhost:3001/users';
+  const [user, setUser] = useState({
+    user: {
+      username: "",
+      email: "",
+      password: "",
+    },
+  });
+  const handleUserChange = (e) => {
+    setUser((old) => ({
+      ...old,
+      user: { ...old.user, [e.target.name]: e.target.value },
+    }));
+    console.log(user);
+  };
 
   const userSubmit = async (e) => {
     e.preventDefault();
-    axios.post(loginURL, {
-      name: userName,
-      password: userPassword,
-    })
-      .then((response) => {
-        if (response.status === 201) {
-          window.location.href = '/Rooms';
-        }
-      });
+    const result = await sendPost("register", user);
+    console.log(result);
   };
 
   return (
     <div className="signup-page">
       <div>SignUp</div>
       <form onSubmit={userSubmit}>
-        <input onChange={(e) => setUserName(e.target.value)} className="signInput" type="text" placeholder="User" required />
-        <input onChange={(e) => setUserPassword(e.target.value)} className="signInput" type="password" placeholder="Password" required />
+        <input
+          name="username"
+          id="username"
+          onChange={handleUserChange}
+          className="signInput"
+          type="text"
+          placeholder="User"
+          required
+        />
+        <input
+          name="email"
+          id="email"
+          onChange={handleUserChange}
+          className="signInput"
+          type="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          name="password"
+          id="password"
+          onChange={handleUserChange}
+          className="signInput"
+          type="password"
+          placeholder="Password"
+          required
+        />
         <button type="submit">Login</button>
       </form>
     </div>

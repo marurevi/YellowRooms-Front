@@ -1,9 +1,11 @@
-import axios from 'axios';
+import userEvent from "@testing-library/user-event";
+import axios from "axios";
+import { json } from "react-router-dom";
 
-export const baseUrl = 'http://localhost:3001/';
+export const baseUrl = "https://yellow-rooms.herokuapp.com/api/v1/";
 
 // custom is to alternate the endpoint
-export async function sendGet(custom = '') {
+export async function sendGet(custom = "") {
   return axios.get(baseUrl + custom).then((response) => response.data);
 }
 
@@ -13,9 +15,15 @@ export async function sendDelete(custom) {
 }
 
 export async function sendPost(custom, data) {
-  return axios
-    .post(baseUrl + custom, {
-      data,
-    })
-    .then((response) => response);
+  const stringUser = JSON.stringify(data);
+  console.log(stringUser);
+  return fetch("https://cors-anywhere.herokuapp.com/" + baseUrl + custom, {
+    method: "POST",
+    header: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: stringUser,
+  }).catch((error) => console.log(error));
+  // return axios.post(baseUrl + custom, {}).then((response) => response);
 }
