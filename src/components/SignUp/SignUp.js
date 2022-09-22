@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { sendPost } from "../../API/api";
+import React, { useState } from 'react';
+
 const SignUp = () => {
   const [user, setUser] = useState({
     user: {
-      username: "",
-      email: "",
-      password: "",
+      username: '',
+      email: '',
+      password: '',
     },
   });
   const handleUserChange = (e) => {
@@ -13,13 +13,20 @@ const SignUp = () => {
       ...old,
       user: { ...old.user, [e.target.name]: e.target.value },
     }));
-    console.log(user);
   };
 
   const userSubmit = async (e) => {
     e.preventDefault();
-    const result = await sendPost("register", user);
-    console.log(result);
+    console.log(JSON.stringify(user));
+    const result = await fetch(
+      'https://yellow-rooms.herokuapp.com/api/v1/register',
+      {
+        method: 'post',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(user),
+      },
+    );
+    console.log(result.json());
   };
 
   return (
