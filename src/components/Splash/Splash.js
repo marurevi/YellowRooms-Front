@@ -34,7 +34,7 @@ const Splash = () => {
           <NavLink className="register-link" to="signup">REGISTER</NavLink>
         </div>
         <input onChange={(e) => setUserName(e.target.value)} className="loginInput" type="text" placeholder="User" required />
-        <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" required />
+        <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="password" placeholder="Password" required />
         <button className="loginBtn" type="submit">LOGIN</button>
       </form>
       <footer className="footer">
