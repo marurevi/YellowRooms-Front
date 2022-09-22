@@ -8,6 +8,10 @@ const Splash = () => {
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const loginURL = 'http://localhost:3001/users';
+  const marianaGithub = 'https://github.com/marurevi';
+  const andresGithub = 'https://github.com/anagudelogu';
+  const axelGithub = 'https://github.com/AxelSoler';
+  const tadesseGithub = 'https://github.com/Tadesse-Alemayehu';
 
   const userSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +37,15 @@ const Splash = () => {
         <input onChange={(e) => setUserPassword(e.target.value)} className="loginInput" type="text" placeholder="Password" required />
         <button className="loginBtn" type="submit">LOGIN</button>
       </form>
+      <footer className="footer">
+        <li className="profile">Microverse Final Capstone Team</li>
+        <ul className="ulProfile">
+          <li><a className="profile" href={marianaGithub} target="_blank" rel="noopener noreferrer">Mariana</a></li>
+          <li><a className="profile" href={andresGithub} target="_blank" rel="noopener noreferrer">Andres</a></li>
+          <li><a className="profile" href={axelGithub} target="_blank" rel="noopener noreferrer">Axel</a></li>
+          <li><a className="profile" href={tadesseGithub} target="_blank" rel="noopener noreferrer">Tadesse</a></li>
+        </ul>
+      </footer>
     </div>
   );
 };

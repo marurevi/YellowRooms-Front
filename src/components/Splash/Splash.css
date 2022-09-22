@@ -86,6 +86,10 @@
   margin: 0 auto 3vh auto;
 }
 
+.footer {
+  display: none;
+}
+
 @media only screen and (min-width: 769px) {
   .login-form {
     width: 80%;
@@ -116,5 +120,30 @@
 
   .mainLogo {
     width: 350px;
+  }
+
+  .footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 110px;
+    background-color: #737372;
+    color: #fff;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 24px;
+}
+
+  .ulProfile {
+    list-style-type: none;
+    display: flex;
+  }
+
+  .profile {
+    text-decoration: none;
+    color: #fff;
   }
 }
