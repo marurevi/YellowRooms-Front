@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { sendPost } from "../../API/api";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { sendPost } from '../../API/api';
+
 const SignUp = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     user: {
-      username: "",
-      email: "",
-      password: "",
+      username: '',
+      email: '',
+      password: '',
     },
   });
   const handleUserChange = (e) => {
@@ -19,14 +20,15 @@ const SignUp = () => {
 
   const userSubmit = async (e) => {
     e.preventDefault();
-    const response = await sendPost("register", user);
+    const response = await sendPost('register', user);
     const token = response.headers.authorization;
     if (token) {
-      localStorage.setItem("token", token);
-      navigate("/rooms");
+      localStorage.setItem('token', token);
+      navigate('/rooms');
     } else {
       // TODO: Error handling
     }
+    console.log(response);
   };
 
   return (

@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 
-export const baseUrl = "https://yellow-rooms.herokuapp.com/api/v1/";
+export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
 
 // custom is to alternate the endpoint
-export async function sendGet(custom = "") {
+export async function sendGet(custom = '') {
   return axios.get(baseUrl + custom).then((response) => response.data);
 }
 
@@ -14,7 +14,7 @@ export async function sendDelete(custom) {
 
 export async function sendPost(custom, data) {
   const response = await axios.post(baseUrl + custom, data, {
-    headers: { "Content-Type": "application/json" },
+    headers: { 'Content-Type': 'application/json' },
   });
   return response;
 }
