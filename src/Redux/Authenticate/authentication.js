@@ -1,5 +1,5 @@
 const REGISTER_USER = "Authentication/authentication/REGISTER_USER";
-import { sendPost } from "../../API/api";
+import { sendPost, setToken } from "../../API/api";
 export const registerUser = (data) => (dispatch) => {
   sendPost("register", data)
     .then((response) => {
@@ -7,7 +7,7 @@ export const registerUser = (data) => (dispatch) => {
       const user = response.data.data.user;
       if (token) {
         dispatch({ type: REGISTER_USER, payload: { ...user, token } });
-        localStorage.setItem("token", token);
+        setToken(token);
       }
     })
     .catch((error) => {
