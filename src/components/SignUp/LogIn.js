@@ -1,93 +1,77 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { ImCross } from 'react-icons/im';
-import PropTypes from 'prop-types';
-import { registerUser } from '../../Redux/Authenticate/authentication';
+import { loginUser } from '../../Redux/Authenticate/authentication';
 import '../Splash/Splash.css';
 
-const SignUp = (props) => {
+const LogIn = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const initialForm = {
     user: {
-      username: '',
-      email: '',
+      login: '',
       password: '',
     },
   };
   const [user, setUser] = useState(initialForm);
-
-  // NOTE: handle user data changes inside the form
   const handleUserChange = (e) => {
     setUser((old) => ({
       ...old,
       user: { ...old.user, [e.target.name]: e.target.value },
     }));
   };
-
-  // NOTE: Navigate to rooms on success sign in
+  // NOTE: Navigate to rooms on success log in
   const changeNavigation = () => {
     navigate('/rooms');
   };
-
-  // NOTE: start registering user
   const userSubmit = async (e) => {
     e.preventDefault();
-    dispatch(registerUser(user, changeNavigation));
+    dispatch(loginUser(user, changeNavigation));
   };
-
   const { style } = props;
 
   return (
     <div className={style}>
-      <div className="signupTitle">
-        <h3 className="signup">SignUp</h3>
-        <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
-          <ImCross />
-        </IconContext.Provider>
-      </div>
-      <form onSubmit={userSubmit}>
+      <form className="login-form" onSubmit={userSubmit}>
+        <div className="signupTitle">
+          <h3 className="signup">LogIn</h3>
+          <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
+            <ImCross />
+          </IconContext.Provider>
+        </div>
         <input
-          name="username"
-          id="username"
           onChange={handleUserChange}
           className="loginInput"
+          name="login"
+          value={user.user.login}
           type="text"
           placeholder="User"
           required
         />
         <input
-          name="email"
-          id="email"
-          onChange={handleUserChange}
-          className="loginInput"
-          type="email"
-          placeholder="Email"
-          required
-        />
-        <input
-          name="password"
-          id="password"
           onChange={handleUserChange}
           className="loginInput"
           type="password"
+          name="password"
+          value={user.user.password}
           placeholder="Password"
           required
         />
-        <button className="registerBtn" type="submit">Register</button>
+        <button className="registerBtn" type="submit">LogIn</button>
       </form>
     </div>
   );
 };
 
-export default SignUp;
+export default LogIn;
 
-SignUp.propTypes = {
+LogIn.propTypes = {
   style: PropTypes.string,
 };
 
-SignUp.defaultProps = {
+LogIn.defaultProps = {
   style: 'inactive',
 };

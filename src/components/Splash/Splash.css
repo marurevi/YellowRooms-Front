@@ -11,11 +11,9 @@
   text-decoration: none;
 }
 
-.welcome {
-  color: #fff;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 40px;
-  text-shadow: 4px 3px 5px #737372;
+.blur {
+  filter: blur(8px);
+  -webkit-filter: blur(4px);
 }
 
 .mainLogo {
@@ -23,7 +21,7 @@
 }
 
 .loginInput {
-  width: 80vw;
+  width: 80%;
   height: 36px;
   color: #fff;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -40,21 +38,6 @@
   background: #d0b447;
 }
 
-.register-link {
-  text-decoration: none;
-  width: 30vw;
-  padding: 12px;
-  color: #fff;
-  background-color: #91bd04;
-  border-radius: 20px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 18px;
-}
-
-.register-link:active {
-  background-color: #6f9004;
-}
-
 .login-form {
   margin-bottom: 24px;
   width: 100%;
@@ -63,8 +46,8 @@
   align-items: center;
 }
 
-.loginBtn {
-  width: 80vw;
+.registerBtn {
+  width: 51%;
   padding: 12px;
   color: #fff;
   background-color: #91bd04;
@@ -75,23 +58,19 @@
   cursor: pointer;
 }
 
-.loginBtn:active {
+.registerBtn:active {
   background-color: #6f9004;
-}
-
-.title-splash {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  margin: 0 auto 3vh auto;
 }
 
 .footer {
   display: none;
 }
 
-.signup-page {
+.inactive {
+  display: none;
+}
+
+.active {
   position: fixed;
   z-index: 10;
   border: 4px solid #737372;
@@ -105,40 +84,6 @@
   justify-content: center;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.signupInput {
-  width: 70%;
-  height: 36px;
-  color: #737372;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 24px;
-  background-color: #98c407;
-  margin-bottom: 3%;
-  padding: 12px;
-  border: 4px #fff;
-  border-style: dashed;
-  border-radius: 16px;
-}
-
-.signupInput:focus {
-  background: #b4e809;
-}
-
-.signupBtn {
-  width: 70%;
-  padding: 12px;
-  color: #737372;
-  background-color: #ffde59;
-  border: 4px #737372;
-  border-radius: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-.signupBtn:active {
-  background-color: #c29f12;
 }
 
 .signup {
