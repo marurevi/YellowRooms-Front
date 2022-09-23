@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { loginUser } from '../../Redux/Authenticate/authentication';
 import SignUp from '../SignUp/SignUp';
+import Footer from '../Footer/Footer';
 // import axios from 'axios';
 import mainLogo from '../../img/YELLOW-3.png';
 import './Splash.css';
@@ -14,10 +15,6 @@ const Splash = () => {
   // const [userName, setUserName] = useState("");
   // const [userPassword, setUserPassword] = useState("");
   // const loginURL = 'http://localhost:3001/users';
-  const marianaGithub = 'https://github.com/marurevi';
-  const andresGithub = 'https://github.com/anagudelogu';
-  const axelGithub = 'https://github.com/AxelSoler';
-  const tadesseGithub = 'https://github.com/Tadesse-Alemayehu';
   const initialForm = {
     user: {
       login: '',
@@ -81,51 +78,7 @@ const Splash = () => {
         </button>
       </form>
       <SignUp />
-      <footer className="footer">
-        <li className="profile">Microverse Final Capstone Team</li>
-        <ul className="ulProfile">
-          <li>
-            <a
-              className="profile"
-              href={marianaGithub}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mariana
-            </a>
-          </li>
-          <li>
-            <a
-              className="profile"
-              href={andresGithub}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Andres
-            </a>
-          </li>
-          <li>
-            <a
-              className="profile"
-              href={axelGithub}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Axel
-            </a>
-          </li>
-          <li>
-            <a
-              className="profile"
-              href={tadesseGithub}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Tadesse
-            </a>
-          </li>
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 };
