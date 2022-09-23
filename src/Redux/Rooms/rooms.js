@@ -1,10 +1,11 @@
-import { sendGet, sendDelete } from '../../API/api';
+import { sendGet, sendDelete } from "../../API/api";
 
-const GET_ROOMS = 'details/rooms/GET_ROOMS';
-const DELETE_ROOM = 'details/rooms/DELETE_ROOM';
+const GET_ROOMS = "details/rooms/GET_ROOMS";
+const DELETE_ROOM = "details/rooms/DELETE_ROOM";
 export const getRoomsActionCreator = () => async (dispatch) => {
-  const rooms = await sendGet('rooms');
-  dispatch({ type: GET_ROOMS, payload: rooms });
+  const rooms = await sendGet("rooms");
+  dispatch({ type: GET_ROOMS, payload: [...rooms.data] });
+  console.log([...rooms.data]);
 };
 
 // REVIEW: delete method

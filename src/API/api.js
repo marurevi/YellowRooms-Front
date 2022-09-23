@@ -10,15 +10,18 @@ const myAxios = () =>
     },
   });
 
+// token is set by calling this method
 export const setToken = (newToken) => {
-  console.log(newToken);
   token = newToken;
   localStorage.setItem("token", token);
 };
+
+// token is destroyed by calling this method
 export const DestroyToken = (token) => {
   token = "";
   localStorage.removeItem("token");
 };
+
 // custom is to alternate the endpoint
 export async function sendGet(custom = "") {
   return myAxios()
@@ -29,12 +32,10 @@ export async function sendGet(custom = "") {
 // Custom route must be provided with ID for destroy to find the room
 export async function sendDelete(custom) {
   return myAxios()
-    .delete(baseUrl + custom)
+    .delete(custom)
     .then((response) => response.status);
 }
 
 export async function sendPost(custom, data) {
-  return myAxios().post(baseUrl + custom, data, {
-    headers: { "Content-Type": "application/json" },
-  });
+  return myAxios().post(custom, data);
 }

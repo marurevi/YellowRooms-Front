@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { TiSocialFacebook } from 'react-icons/ti';
-import { RiTwitterFill } from 'react-icons/ri';
-import { SiInstagram } from 'react-icons/si';
-import { getRoomsActionCreator } from '../../Redux/Rooms/rooms';
+import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { TiSocialFacebook } from "react-icons/ti";
+import { RiTwitterFill } from "react-icons/ri";
+import { SiInstagram } from "react-icons/si";
+import { getRoomsActionCreator } from "../../Redux/Rooms/rooms";
 
 const Rooms = () => {
   const dispatch = useDispatch();
