@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { sendPost } from '../../API/api';
-
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { registerUser } from "../../Redux/Authenticate/authentication";
+import { useDispatch, useSelector } from "react-redux";
 const SignUp = () => {
+  const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.user);
   const navigate = useNavigate();
   const [user, setUser] = useState({
     user: {
-      username: '',
-      email: '',
-      password: '',
+      username: "",
+      email: "",
+      password: "",
     },
   });
   const handleUserChange = (e) => {
@@ -18,17 +20,14 @@ const SignUp = () => {
     }));
   };
 
+  if (currentUser) navigate("/rooms");
+
+  useState(() => {
+    console.log(currentUser);
+  }, [currentUser]);
   const userSubmit = async (e) => {
     e.preventDefault();
-    const response = await sendPost('register', user);
-    const token = response.headers.authorization;
-    if (token) {
-      localStorage.setItem('token', token);
-      navigate('/rooms');
-    } else {
-      // TODO: Error handling
-    }
-    console.log(response);
+    dispatch(registerUser(user));
   };
 
   return (
