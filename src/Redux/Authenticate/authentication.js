@@ -1,5 +1,7 @@
 const REGISTER_USER = "Authentication/authentication/REGISTER_USER";
+const LOGIN_USER = "Authentication/authentication/LOGIN_USER";
 import { sendPost, setToken } from "../../API/api";
+
 export const registerUser = (data, navigation) => (dispatch) => {
   sendPost("register", data)
     .then((response) => {
@@ -15,6 +17,23 @@ export const registerUser = (data, navigation) => (dispatch) => {
       console.error("fail to sign in", error);
     });
 };
+
+export const loginUser = (data, navigation) => (dispatch) => {
+  sendPost("login", data)
+    .then((response) => {
+      const token = response.headers.authorization;
+      const user = response.data.data.user;
+      if (token) {
+        dispatch({ type: REGISTER_USER, payload: { ...user, token } });
+        setToken(token);
+        navigation();
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
 const handleUser = (state = null, action) => {
   switch (action.type) {
     case REGISTER_USER:

@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../Redux/Authenticate/authentication";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 const SignUp = () => {
   const dispatch = useDispatch();
-  const currentUser = useSelector((state) => state.user);
   const navigate = useNavigate();
-  const [user, setUser] = useState({
+  const initialForm = {
     user: {
       username: "",
       email: "",
       password: "",
     },
-  });
+  };
+  const [user, setUser] = useState(initialForm);
+
+  //NOTE: handle user data changes inside the form
   const handleUserChange = (e) => {
     setUser((old) => ({
       ...old,
@@ -20,9 +22,12 @@ const SignUp = () => {
     }));
   };
 
+  //NOTE: Navigate to rooms on success sign in
   const changeNavigation = () => {
     navigate("/rooms");
   };
+
+  //NOTE: start registering user
   const userSubmit = async (e) => {
     e.preventDefault();
     dispatch(registerUser(user, changeNavigation));
