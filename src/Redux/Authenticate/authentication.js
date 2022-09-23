@@ -1,6 +1,6 @@
 const REGISTER_USER = "Authentication/authentication/REGISTER_USER";
 import { sendPost, setToken } from "../../API/api";
-export const registerUser = (data) => (dispatch) => {
+export const registerUser = (data, navigation) => (dispatch) => {
   sendPost("register", data)
     .then((response) => {
       const token = response.headers.authorization;
@@ -8,6 +8,7 @@ export const registerUser = (data) => (dispatch) => {
       if (token) {
         dispatch({ type: REGISTER_USER, payload: { ...user, token } });
         setToken(token);
+        navigation();
       }
     })
     .catch((error) => {

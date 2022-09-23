@@ -20,14 +20,12 @@ const SignUp = () => {
     }));
   };
 
-  if (currentUser) navigate("/rooms");
-
-  useState(() => {
-    console.log(currentUser);
-  }, [currentUser]);
+  const changeNavigation = () => {
+    navigate("/rooms");
+  };
   const userSubmit = async (e) => {
     e.preventDefault();
-    dispatch(registerUser(user));
+    dispatch(registerUser(user, changeNavigation));
   };
 
   return (

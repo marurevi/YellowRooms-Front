@@ -18,7 +18,7 @@ const Rooms = () => {
         <h1>We have the luxuries</h1>
         <h4>Please select your match</h4>
       </main>
-      {rooms.map((room) => (
+      {rooms.map(({ attributes: room }) => (
         <NavLink className="link" to={`/Rooms/id=${room.id}`} key={room.id}>
           <article>
             <div>
