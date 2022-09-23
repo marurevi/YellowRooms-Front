@@ -1,4 +1,5 @@
 .splash-page {
+  z-index: 0;
   background-color: #ffde59;
   width: 100%;
   height: 100vh;
@@ -88,6 +89,81 @@
 
 .footer {
   display: none;
+}
+
+.signup-page {
+  position: fixed;
+  z-index: 10;
+  border: 4px solid #737372;
+  background-color: #fff;
+  width: 70%;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.signupInput {
+  width: 70%;
+  height: 36px;
+  color: #737372;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 24px;
+  background-color: #98c407;
+  margin-bottom: 3%;
+  padding: 12px;
+  border: 4px #fff;
+  border-style: dashed;
+  border-radius: 16px;
+}
+
+.signupInput:focus {
+  background: #b4e809;
+}
+
+.signupBtn {
+  width: 70%;
+  padding: 12px;
+  color: #737372;
+  background-color: #ffde59;
+  border: 4px #737372;
+  border-radius: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.signupBtn:active {
+  background-color: #c29f12;
+}
+
+.signup {
+  width: 100%;
+  font-size: 26px;
+  color: #737372;
+  text-align: left;
+  margin-bottom: 20px;
+  padding-bottom: 4px;
+  border-bottom: 4px solid #ffde59;
+}
+
+.signupTitle {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.crossBtn {
+  position: relative;
+  top: -12px;
+  left: 12px;
+  color: #737372;
+  width: 40%;
+  padding: 12px;
 }
 
 @media only screen and (min-width: 769px) {

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { loginUser } from "../../Redux/Authenticate/authentication";
+import React, { useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { loginUser } from '../../Redux/Authenticate/authentication';
+import SignUp from '../SignUp/SignUp';
 // import axios from 'axios';
-import mainLogo from "../../img/YELLOW-3.png";
-import "./Splash.css";
+import mainLogo from '../../img/YELLOW-3.png';
+import './Splash.css';
 
 const Splash = () => {
   const dispatch = useDispatch();
@@ -13,14 +14,14 @@ const Splash = () => {
   // const [userName, setUserName] = useState("");
   // const [userPassword, setUserPassword] = useState("");
   // const loginURL = 'http://localhost:3001/users';
-  const marianaGithub = "https://github.com/marurevi";
-  const andresGithub = "https://github.com/anagudelogu";
-  const axelGithub = "https://github.com/AxelSoler";
-  const tadesseGithub = "https://github.com/Tadesse-Alemayehu";
+  const marianaGithub = 'https://github.com/marurevi';
+  const andresGithub = 'https://github.com/anagudelogu';
+  const axelGithub = 'https://github.com/AxelSoler';
+  const tadesseGithub = 'https://github.com/Tadesse-Alemayehu';
   const initialForm = {
     user: {
-      login: "",
-      password: "",
+      login: '',
+      password: '',
     },
   };
   const [user, setUser] = useState(initialForm);
@@ -30,9 +31,9 @@ const Splash = () => {
       user: { ...old.user, [e.target.name]: e.target.value },
     }));
   };
-  //NOTE: Navigate to rooms on success log in
+  // NOTE: Navigate to rooms on success log in
   const changeNavigation = () => {
-    navigate("/rooms");
+    navigate('/rooms');
   };
   const userSubmit = async (e) => {
     e.preventDefault();
@@ -79,6 +80,7 @@ const Splash = () => {
           LOGIN
         </button>
       </form>
+      <SignUp />
       <footer className="footer">
         <li className="profile">Microverse Final Capstone Team</li>
         <ul className="ulProfile">
