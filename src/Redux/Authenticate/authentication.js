@@ -19,6 +19,7 @@ export const registerUser = (data, navigation) => (dispatch) => {
 };
 
 export const loginUser = (data, navigation) => (dispatch) => {
+  console.log(data);
   sendPost("login", data)
     .then((response) => {
       const token = response.headers.authorization;

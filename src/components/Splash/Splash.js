@@ -10,14 +10,26 @@ import "./Splash.css";
 const Splash = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [userName, setUserName] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  // const [userName, setUserName] = useState("");
+  // const [userPassword, setUserPassword] = useState("");
   // const loginURL = 'http://localhost:3001/users';
   const marianaGithub = "https://github.com/marurevi";
   const andresGithub = "https://github.com/anagudelogu";
   const axelGithub = "https://github.com/AxelSoler";
   const tadesseGithub = "https://github.com/Tadesse-Alemayehu";
-
+  const initialForm = {
+    user: {
+      login: "",
+      password: "",
+    },
+  };
+  const [user, setUser] = useState(initialForm);
+  const handleUserChange = (e) => {
+    setUser((old) => ({
+      ...old,
+      user: { ...old.user, [e.target.name]: e.target.value },
+    }));
+  };
   //NOTE: Navigate to rooms on success log in
   const changeNavigation = () => {
     navigate("/rooms");
@@ -33,12 +45,7 @@ const Splash = () => {
     //     window.location.href = '/Rooms';
     //   }
     // });
-    dispatch(
-      loginUser(
-        { user: { login: userName, password: userPassword } },
-        changeNavigation
-      )
-    );
+    dispatch(loginUser(user, changeNavigation));
   };
   return (
     <div className="splash-page">
@@ -51,16 +58,20 @@ const Splash = () => {
           </NavLink>
         </div>
         <input
-          onChange={(e) => setUserName(e.target.value)}
+          onChange={handleUserChange}
           className="loginInput"
+          name="login"
+          value={user.user.login}
           type="text"
           placeholder="User"
           required
         />
         <input
-          onChange={(e) => setUserPassword(e.target.value)}
+          onChange={handleUserChange}
           className="loginInput"
           type="password"
+          name="password"
+          value={user.user.password}
           placeholder="Password"
           required
         />
