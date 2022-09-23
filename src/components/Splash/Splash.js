@@ -3,16 +3,12 @@ import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../Redux/Authenticate/authentication";
-// import axios from 'axios';
 import mainLogo from "../../img/YELLOW-3.png";
 import "./Splash.css";
 
 const Splash = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const [userName, setUserName] = useState("");
-  // const [userPassword, setUserPassword] = useState("");
-  // const loginURL = 'http://localhost:3001/users';
   const marianaGithub = "https://github.com/marurevi";
   const andresGithub = "https://github.com/anagudelogu";
   const axelGithub = "https://github.com/AxelSoler";
@@ -36,15 +32,6 @@ const Splash = () => {
   };
   const userSubmit = async (e) => {
     e.preventDefault();
-    // axios.get(loginURL).then((response) => {
-    //   const data = response.data
-    //     .filter((item) => item.name === userName && item.password === userPassword);
-    //   if (data[0]) {
-    //     setUserName('');
-    //     setUserPassword('');
-    //     window.location.href = '/Rooms';
-    //   }
-    // });
     dispatch(loginUser(user, changeNavigation));
   };
   return (
