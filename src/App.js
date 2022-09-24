@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import Navbar from './components/Navbar/Navbar';
 import Splash from './components/Splash/Splash';
 import Rooms from './components/Rooms/Rooms';
 import AddRoom from './components/AddRoom/AddRoom';
@@ -14,7 +14,7 @@ import AllReserves from './components/partials/AllReserves';
 const App = () => (
   <div className="App">
     <BrowserRouter>
-      <Header />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Splash />} />
         <Route path="/signup" element={<SignUp />} />
