@@ -14,18 +14,24 @@ import AllReserves from './components/partials/AllReserves';
 const App = () => (
   <div className="App">
     <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Splash />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/Rooms/*" element={<Rooms />} />
-        <Route path="/Rooms/:id" element={<Detail />} />
-        <Route path="/AddRoom" element={<AddRoom />} />
-        <Route path="/DeleteRoom" element={<DeleteRoom />} />
-        <Route path="/Reservations" element={<Reservations />} />
-        <Route path="/Reserve/:room_id" element={<Reserve />} />
-        <Route path="/Reserve" element={<AllReserves />} />
-      </Routes>
+      <div className="container">
+        <section className="sidebar">
+          <Navbar />
+        </section>
+        <section className="main-container">
+          <Routes>
+            <Route path="/" element={<Splash />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/Rooms/*" element={<Rooms />} />
+            <Route path="/Rooms/:id" element={<Detail />} />
+            <Route path="/AddRoom" element={<AddRoom />} />
+            <Route path="/DeleteRoom" element={<DeleteRoom />} />
+            <Route path="/Reservations" element={<Reservations />} />
+            <Route path="/Reserve/:room_id" element={<Reserve />} />
+            <Route path="/Reserve" element={<AllReserves />} />
+          </Routes>
+        </section>
+      </div>
     </BrowserRouter>
   </div>
 );

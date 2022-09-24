@@ -21,10 +21,10 @@ a {
 
 .navbar {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .hamburger {
@@ -43,13 +43,14 @@ a {
 
 .nav-menu {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   list-style: none;
 }
 
 .nav-item {
-  margin-left: 0 5rem;
+  margin: 2.5rem 0 2.5rem 5rem;
 }
 
 .nav-link {
@@ -62,31 +63,49 @@ a {
 }
 
 .nav-link:hover {
-  background-color: #737372;
-  color: #ffde59;
+  background-color: #91bd04;
+  color: #fff;
+  width: 100%;
 }
 
 .nav-logo {
-  width: 48px;
+  width: 120px;
+  margin: 3rem 0 15rem 0;
 }
 
 @media only screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .nav-logo {
+    width: 120px;
+    margin: 3rem 0;
+  }
+
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 5rem;
+    top: 0;
     flex-direction: column;
     background-color: #fff;
     width: 100%;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    height: 100vh;
+    align-self: center;
+    padding: 3rem 0 20rem 0;
   }
 
   .nav-menu.active {
-    top: 6.5rem;
+    top: 4.5rem;
     left: 0;
+  }
+
+  .nav-link:hover {
+    background-color: #91bd04;
+    color: #fff;
   }
 
   .nav-item {
@@ -100,6 +119,7 @@ a {
     border: none;
     width: 50px;
     margin-bottom: 2rem;
+    margin-right: 2rem;
   }
 
   .hamburger.active .bar:nth-child(2) {
