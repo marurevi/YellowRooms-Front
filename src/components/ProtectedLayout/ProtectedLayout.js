@@ -12,7 +12,9 @@ const ProtectedLayout = () => {
           <header className="sidebar">
             <Navbar />
           </header>
-          <Outlet />
+          <main className="main-container">
+            <Outlet />
+          </main>
         </>
       ) : (
         <Navigate to="/" />
