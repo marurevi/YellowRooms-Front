@@ -13,7 +13,7 @@ const Rooms = () => {
     if (roomsState.pending) {
       dispatch(getRoomsActionCreator());
     }
-  }, [dispatch, roomsState]);
+  }, [dispatch]);
   return (
     <>
       <main>
