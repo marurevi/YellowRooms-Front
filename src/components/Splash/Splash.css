@@ -112,6 +112,7 @@
 .crossBtn {
   color: #737372;
   width: 100%;
+  cursor: pointer;
 }
 
 .closeBtn {
