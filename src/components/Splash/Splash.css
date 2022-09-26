@@ -18,6 +18,7 @@
 
 .mainLogo {
   width: 270px;
+  margin: 5% 0;
 }
 
 .loginInput {
@@ -49,6 +50,7 @@
 .registerBtn {
   width: 51%;
   padding: 12px;
+  margin: 5% 0;
   color: #fff;
   background-color: #91bd04;
   border: 4px #737372;
@@ -114,12 +116,6 @@
 @media only screen and (min-width: 769px) {
   .login-form {
     width: 80%;
-  }
-
-  .register-link {
-    min-width: 130px;
-    width: 10%;
-    font-size: 24px;
   }
 
   .loginBtn {
