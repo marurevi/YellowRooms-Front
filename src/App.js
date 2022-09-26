@@ -11,14 +11,15 @@ import Detail from './components/Detail/Detail';
 import SignUp from './components/SignUp/SignUp';
 import AllReserves from './components/partials/AllReserves';
 
+const currentLocation = window.location.pathname;
 const App = () => (
   <div className="App">
     <BrowserRouter>
       <div className="container">
-        <section className="sidebar">
+        <header className={(currentLocation === '/' ? 'hidden' : 'sidebar')}>
           <Navbar />
-        </section>
-        <section className="main-container">
+        </header>
+        <main className={(currentLocation === '/' ? 'main' : 'main-container')}>
           <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/signup" element={<SignUp />} />
@@ -30,7 +31,7 @@ const App = () => (
             <Route path="/Reserve/:room_id" element={<Reserve />} />
             <Route path="/Reserve" element={<AllReserves />} />
           </Routes>
-        </section>
+        </main>
       </div>
     </BrowserRouter>
   </div>
