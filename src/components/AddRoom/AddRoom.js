@@ -1,101 +1,102 @@
 import React, { useState } from 'react';
-import { sendPost } from '../../API/api';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { createRoomActionCreator } from '../../Redux/Rooms/rooms';
 
 const AddRoom = () => {
-  const initialFromState = {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [room, setRoom] = useState({
     name: '',
     stars: 0,
     persons_allowed: 1,
     photo: '',
     description: '',
     price: 0,
-    status: '',
-  };
-  const [formData, setFormData] = useState(initialFromState);
+  });
 
-  const formInputChange = (event) => {
-    event.preventDefault();
-    setFormData((oldState) => ({
+  const handleInputChange = (event) => {
+    setRoom((oldState) => ({
       ...oldState,
       [event.target.name]: event.target.value,
-      status: '',
     }));
   };
-  const formSubmitted = async (event) => {
+
+  const changeNavigation = () => {
+    navigate('/rooms');
+  };
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const status = await sendPost('rooms', formData);
-    if (status.statusText === 'Created') {
-      setFormData({ ...initialFromState, status: 'Created' });
-    }
+    dispatch(createRoomActionCreator(room, changeNavigation));
   };
 
   return (
-    <>
-      {formData.status === 'Created' && <div>Room is created</div>}
-      <form action="/" onSubmit={formSubmitted}>
-        <div>
-          <label htmlFor="photo">
-            Photo
-            <input
-              type="text"
-              name="photo"
-              id="photo"
-              value={formData.photo}
-              onChange={formInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="name">
-            Name
-            <input
-              type="text"
-              name="name"
-              id="name"
-              value={formData.name}
-              onChange={formInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          {' '}
-          <label htmlFor="stars">
-            Stars
-            <input
-              type="number"
-              name="stars"
-              id="stars"
-              value={formData.stars}
-              onChange={formInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="personsAllowed">
-            Number people
-            <input
-              type="number"
-              name="personsAllowed"
-              id="personsAllowed"
-              value={formData.allowed}
-              onChange={formInputChange}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="description">
-            Description
-            <textarea
-              name="description"
-              id="description"
-              value={formData.description}
-              onChange={formInputChange}
-            />
-          </label>
-        </div>
-        <button type="submit">Add Room</button>
-      </form>
-    </>
+    <form action="/" onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="photo">
+          Photo
+          <input
+            type="text"
+            name="photo"
+            id="photo"
+            value={room.photo}
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+      <div>
+        <label htmlFor="name">
+          Name
+          <input
+            type="text"
+            name="name"
+            id="name"
+            value={room.name}
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+
+      <div>
+        <label htmlFor="stars">
+          Stars
+          <input
+            type="number"
+            name="stars"
+            id="stars"
+            value={room.stars}
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+
+      <div>
+        <label htmlFor="persons_allowed">
+          Persons allowed
+          <input
+            type="number"
+            name="persons_allowed"
+            id="persons_allowed"
+            value={room.persons_allowed}
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+
+      <div>
+        <label htmlFor="description">
+          Description
+          <textarea
+            name="description"
+            id="description"
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+
+      <button type="submit">Create Room</button>
+    </form>
   );
 };
 
