@@ -1,29 +1,29 @@
-import axios from "axios";
-export const baseUrl = "https://yellow-rooms.herokuapp.com/api/v1/";
-let token = "";
-const myAxios = () =>
-  axios.create({
-    baseURL: "https://yellow-rooms.herokuapp.com/api/v1/",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: token,
-    },
-  });
+import axios from 'axios';
+
+export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
+let token = '';
+const myAxios = () => axios.create({
+  baseURL: 'https://yellow-rooms.herokuapp.com/api/v1/',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: token,
+  },
+});
 
 // token is set by calling this method
 export const setToken = (newToken) => {
   token = newToken;
-  localStorage.setItem("token", token);
+  localStorage.setItem('token', token);
 };
 
 // token is destroyed by calling this method
-export const DestroyToken = (token) => {
-  token = "";
-  localStorage.removeItem("token");
+export const DestroyToken = () => {
+  token = '';
+  localStorage.removeItem('token');
 };
 
 // custom is to alternate the endpoint
-export async function sendGet(custom = "") {
+export async function sendGet(custom = '') {
   return myAxios()
     .get(custom)
     .then((response) => response.data);
