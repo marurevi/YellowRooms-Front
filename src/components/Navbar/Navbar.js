@@ -9,31 +9,24 @@ const Navbar = () => {
     return null;
   }
 
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-
-  const mobileMenu = (e) => {
-    e.preventDefault();
+  const toggleMobileMenu = () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
-  };
-
-  const closeMenu = () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
   };
 
   return (
     <nav className="navbar">
       <img src={logo} alt="logo" className="nav-logo" />
       <ul className="nav-menu">
-        <li className="nav-item"><NavLink className="nav-link" onClick={closeMenu} onKeyPress={mobileMenu} to="/Rooms">ROOMS</NavLink></li>
-        <li className="nav-item"><NavLink className="nav-link" onClick={closeMenu} onKeyPress={mobileMenu} to="/Reserve">RESERVE</NavLink></li>
-        <li className="nav-item"><NavLink className="nav-link" onClick={closeMenu} onKeyPress={mobileMenu} to="/Reservations">RESERVATIONS</NavLink></li>
-        <li className="nav-item"><NavLink className="nav-link" onClick={closeMenu} onKeyPress={mobileMenu} to="/AddRoom">NEW</NavLink></li>
-        <li className="nav-item"><NavLink className="nav-link" onClick={closeMenu} onKeyPress={mobileMenu} to="/DeleteRoom">DELETE</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link" onClick={toggleMobileMenu} onKeyPress={toggleMobileMenu} to="/Rooms">ROOMS</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link" onClick={toggleMobileMenu} onKeyPress={toggleMobileMenu} to="/Reserve">RESERVE</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link" onClick={toggleMobileMenu} onKeyPress={toggleMobileMenu} to="/Reservations">RESERVATIONS</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link" onClick={toggleMobileMenu} onKeyPress={toggleMobileMenu} to="/AddRoom">NEW</NavLink></li>
+        <li className="nav-item"><NavLink className="nav-link" onClick={toggleMobileMenu} onKeyPress={toggleMobileMenu} to="/DeleteRoom">DELETE</NavLink></li>
       </ul>
-      <button type="button" className="hamburger" onClick={mobileMenu} onKeyDown={mobileMenu}>
+      <button type="button" className="hamburger" onClick={toggleMobileMenu} onKeyDown={toggleMobileMenu}>
         <span className="bar" />
         <span className="bar" />
         <span className="bar" />
