@@ -1,21 +1,41 @@
 import axios from 'axios';
 
-export const baseUrl = 'http://localhost:3001/';
+export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
+let token = '';
+const myAxios = () => axios.create({
+  baseURL: 'https://yellow-rooms.herokuapp.com/api/v1/',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: token,
+  },
+});
+
+// token is set by calling this method
+export const setToken = (newToken) => {
+  token = newToken;
+  localStorage.setItem('token', token);
+};
+
+// token is destroyed by calling this method
+export const DestroyToken = () => {
+  token = '';
+  localStorage.removeItem('token');
+};
 
 // custom is to alternate the endpoint
 export async function sendGet(custom = '') {
-  return axios.get(baseUrl + custom).then((response) => response.data);
+  return myAxios()
+    .get(custom)
+    .then((response) => response.data);
 }
 
 // Custom route must be provided with ID for destroy to find the room
 export async function sendDelete(custom) {
-  return axios.delete(baseUrl + custom).then((response) => response.status);
+  return myAxios()
+    .delete(custom)
+    .then((response) => response.status);
 }
 
 export async function sendPost(custom, data) {
-  return axios
-    .post(baseUrl + custom, {
-      data,
-    })
-    .then((response) => response);
+  return myAxios().post(custom, data);
 }

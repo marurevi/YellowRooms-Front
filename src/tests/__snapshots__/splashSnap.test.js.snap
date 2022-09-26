@@ -10,46 +10,105 @@ Array [
       className="mainLogo"
       src="YELLOW-3.png"
     />
-    <h2>
-      Welcome to Yellow Rooms
-    </h2>
-    <ul
-      className="registration-links"
+    <form
+      className="login-form"
+      onSubmit={[Function]}
     >
-      <form
-        onSubmit={[Function]}
+      <div
+        className="title-splash"
       >
-        <input
-          className="loginInput"
-          onChange={[Function]}
-          placeholder="User"
-          required={true}
-          type="text"
-        />
-        <input
-          className="loginInput"
-          onChange={[Function]}
-          placeholder="Password"
-          required={true}
-          type="password"
-        />
-        <button
-          type="submit"
+        <h2
+          className="welcome"
         >
-          Login
-        </button>
-      </form>
-      <li>
+          WELCOME
+        </h2>
         <a
-          className="link"
+          className="register-link"
           href="/signup"
           onClick={[Function]}
         >
           REGISTER
         </a>
+      </div>
+      <input
+        className="loginInput"
+        name="login"
+        onChange={[Function]}
+        placeholder="User"
+        required={true}
+        type="text"
+        value=""
+      />
+      <input
+        className="loginInput"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        required={true}
+        type="password"
+        value=""
+      />
+      <button
+        className="loginBtn"
+        type="submit"
+      >
+        LOGIN
+      </button>
+    </form>
+    <footer
+      className="footer"
+    >
+      <li
+        className="profile"
+      >
+        Microverse Final Capstone Team
       </li>
-    </ul>
+      <ul
+        className="ulProfile"
+      >
+        <li>
+          <a
+            className="profile"
+            href="https://github.com/marurevi"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Mariana
+          </a>
+        </li>
+        <li>
+          <a
+            className="profile"
+            href="https://github.com/anagudelogu"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Andres
+          </a>
+        </li>
+        <li>
+          <a
+            className="profile"
+            href="https://github.com/AxelSoler"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Axel
+          </a>
+        </li>
+        <li>
+          <a
+            className="profile"
+            href="https://github.com/Tadesse-Alemayehu"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Tadesse
+          </a>
+        </li>
+      </ul>
+    </footer>
   </div>,
-  ",",
+  ";",
 ]
 `;

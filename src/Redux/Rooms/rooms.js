@@ -4,7 +4,7 @@ const GET_ROOMS = 'details/rooms/GET_ROOMS';
 const DELETE_ROOM = 'details/rooms/DELETE_ROOM';
 export const getRoomsActionCreator = () => async (dispatch) => {
   const rooms = await sendGet('rooms');
-  dispatch({ type: GET_ROOMS, payload: rooms });
+  dispatch({ type: GET_ROOMS, payload: [...rooms.data] });
 };
 
 // REVIEW: delete method
