@@ -4,11 +4,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 const Reserve = () => {
-  let { room_id: roomId } = useParams();
-  roomId = roomId?.split('=')[1];
-  const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id === Number(roomId))[0],
-  );
+  const { room_id: roomId } = useParams();
+  const room = useSelector((state) => state.rooms.rooms.find((room) => room.id === roomId));
   const reservationsURL = 'http://localhost:3001/reservations';
   const [form, setForm] = useState({
     user_id: 0,
@@ -54,7 +51,12 @@ const Reserve = () => {
           placeholder="User"
           required
         />
-        <input type="text" name="room_id" disabled value={room.name} />
+        <input
+          type="text"
+          name="room_id"
+          disabled
+          value={room.name}
+        />
         <input
           onChange={onChange}
           name="start_date"
@@ -80,7 +82,9 @@ const Reserve = () => {
           required
         />
         <button
-          disabled={form.room_id === 0 || form.room_id === 'SELECT OPTION'}
+          disabled={
+            form.room_id === 0 || form.room_id === 'SELECT OPTION'
+          }
           type="submit"
         >
           Create Reservation

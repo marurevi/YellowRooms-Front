@@ -1,33 +1,110 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { IconContext } from 'react-icons';
+import { ImCross } from 'react-icons/im';
+import { registerUser } from '../../Redux/Authenticate/authentication';
+import '../Splash/Splash.css';
 
 const SignUp = () => {
-  const [userName, setUserName] = useState('');
-  const [userPassword, setUserPassword] = useState('');
-  const loginURL = 'http://localhost:3001/users';
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const initialForm = {
+    user: {
+      username: '',
+      email: '',
+      password: '',
+    },
+  };
+  const [styleRegister, setStyleRegister] = useState('modalInactive');
+  const [user, setUser] = useState(initialForm);
 
+  //  NOTE: handle user data changes inside the form
+  const handleUserChange = (e) => {
+    setUser((old) => ({
+      ...old,
+      user: { ...old.user, [e.target.name]: e.target.value },
+    }));
+  };
+
+  //  NOTE: Navigate to rooms on success sign in
+  const changeNavigation = () => {
+    navigate('/rooms');
+  };
+
+  //  NOTE: start registering user
   const userSubmit = async (e) => {
     e.preventDefault();
-    axios.post(loginURL, {
-      name: userName,
-      password: userPassword,
-    })
-      .then((response) => {
-        if (response.status === 201) {
-          window.location.href = '/Rooms';
-        }
-      });
+    dispatch(registerUser(user, changeNavigation));
+  };
+
+  const activeSignUpModal = () => {
+    if (styleRegister === 'modalInactive') {
+      setStyleRegister('modalActive');
+    } else {
+      setStyleRegister('modalInactive');
+    }
   };
 
   return (
-    <div className="signup-page">
-      <div>SignUp</div>
-      <form onSubmit={userSubmit}>
-        <input onChange={(e) => setUserName(e.target.value)} className="signInput" type="text" placeholder="User" required />
-        <input onChange={(e) => setUserPassword(e.target.value)} className="signInput" type="password" placeholder="Password" required />
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <section>
+      <button
+        className="registerBtn"
+        id="signBtn"
+        type="button"
+        onClick={activeSignUpModal}
+      >
+        REGISTER
+      </button>
+      <div className={styleRegister}>
+        <div className="signupTitle">
+          <h3 className="signup">SignUp</h3>
+          <button
+            type="button"
+            className="closeBtn"
+            onClick={activeSignUpModal}
+          >
+            <IconContext.Provider
+              value={{ size: '24px', className: 'crossBtn' }}
+            >
+              <ImCross />
+            </IconContext.Provider>
+          </button>
+        </div>
+        <form onSubmit={userSubmit}>
+          <input
+            name="username"
+            id="username"
+            onChange={handleUserChange}
+            className="loginInput"
+            type="text"
+            placeholder="User"
+            required
+          />
+          <input
+            name="email"
+            id="email"
+            onChange={handleUserChange}
+            className="loginInput"
+            type="email"
+            placeholder="Email"
+            required
+          />
+          <input
+            name="password"
+            id="password"
+            onChange={handleUserChange}
+            className="loginInput"
+            type="password"
+            placeholder="Password"
+            required
+          />
+          <button className="registerBtn" type="submit">
+            Register
+          </button>
+        </form>
+      </div>
+    </section>
   );
 };
 

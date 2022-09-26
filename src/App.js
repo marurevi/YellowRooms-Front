@@ -8,7 +8,6 @@ import DeleteRoom from './components/DeleteRoom/DeleteRoom';
 import Reservations from './components/Reservations/Reservations';
 import Reserve from './components/Reserve/Reserve';
 import Detail from './components/Detail/Detail';
-import SignUp from './components/SignUp/SignUp';
 import AllReserves from './components/partials/AllReserves';
 
 const currentLocation = window.location.pathname;

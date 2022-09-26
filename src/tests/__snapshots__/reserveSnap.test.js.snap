@@ -2,59 +2,6 @@
 
 exports[`Reserve snapshot 1`] = `
 <div>
-  <h2>
-    Reserve Room
-  </h2>
-  <form
-    onSubmit={[Function]}
-  >
-    <input
-      className="signInput"
-      name="user_id"
-      onChange={[Function]}
-      placeholder="User"
-      required={true}
-      type="number"
-    />
-    <select
-      name="room_id"
-      onChange={[Function]}
-      required={true}
-    >
-      <option>
-        SELECT OPTION
-      </option>
-    </select>
-    <input
-      className="signInput"
-      name="start_date"
-      onChange={[Function]}
-      placeholder="Start reservation"
-      required={true}
-      type="text"
-    />
-    <input
-      className="signInput"
-      name="end_date"
-      onChange={[Function]}
-      placeholder="End reservation"
-      required={true}
-      type="text"
-    />
-    <input
-      className="signInput"
-      name="city"
-      onChange={[Function]}
-      placeholder="City"
-      required={true}
-      type="text"
-    />
-    <button
-      disabled={true}
-      type="submit"
-    >
-      Create Reservation
-    </button>
-  </form>
+   No room is set to reserve
 </div>
 `;

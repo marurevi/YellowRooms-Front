@@ -55,6 +55,14 @@
       "end_date": "467",
       "city": "6876",
       "id": 7
+    },
+    {
+      "user_id": 1,
+      "room_id": 1,
+      "start_date": "sdfsdf",
+      "end_date": "sadfasdfsdaf",
+      "city": "Debre Tabor",
+      "id": 8
     }
   ],
   "rooms": [
