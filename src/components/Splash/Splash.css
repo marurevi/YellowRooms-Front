@@ -116,7 +116,7 @@
 
 .closeBtn {
   width: fit-content;
-  height: fit-content;
+  height: 24px;
   background-color: rgb(237, 234, 234);
   border: none;
   display: flex;
@@ -128,25 +128,26 @@
     width: 80%;
   }
 
-  .loginBtn {
-    width: 20vw;
-    font-size: 30px;
-  }
-
   .loginInput {
-    width: 45vw;
+    width: 30vw;
   }
 
-  .title-splash {
-    width: 48vw;
-  }
-
-  .welcome {
-    text-align: left;
+  .registerBtn {
+    margin: 1% 0;
+    width: 30vw;
   }
 
   .mainLogo {
     width: 350px;
+    margin: -10% 0 0 0;
+  }
+
+  .active {
+    width: 50%;
+  }
+
+  .signup {
+    font-size: 32px;
   }
 
   .footer {
