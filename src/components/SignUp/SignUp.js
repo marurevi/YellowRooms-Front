@@ -39,8 +39,12 @@ const SignUp = () => {
   };
 
   const activeSignUpModal = () => {
-    setStyleRegister('active');
-    // const splashBody = document.querySelector('.mainContentSplash');
+    if (styleRegister === 'inactive') {
+      setStyleRegister('active');
+    } else {
+      setStyleRegister('inactive');
+    }
+    // const splashBody = document.querySelector('.splash-page');
     // splashBody.classList.toggle('blur');
   };
 
@@ -52,9 +56,11 @@ const SignUp = () => {
       <div className={styleRegister}>
         <div className="signupTitle">
           <h3 className="signup">SignUp</h3>
-          <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
-            <ImCross />
-          </IconContext.Provider>
+          <button type="button" className="closeBtn" onClick={activeSignUpModal}>
+            <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
+              <ImCross />
+            </IconContext.Provider>
+          </button>
         </div>
         <form onSubmit={userSubmit}>
           <input

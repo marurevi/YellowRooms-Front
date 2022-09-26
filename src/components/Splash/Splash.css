@@ -50,7 +50,7 @@
 .registerBtn {
   width: 51%;
   padding: 12px;
-  margin: 5% 0;
+  margin: 3% 0;
   color: #fff;
   background-color: #91bd04;
   border: 4px #737372;
@@ -74,18 +74,23 @@
 
 .active {
   position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
   z-index: 10;
   border: 4px solid #737372;
-  background-color: #fff;
+  background-color: rgb(237, 234, 234);
   width: 70%;
-  height: 400px;
-  margin: auto;
+  height: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  backdrop-filter: blur(10px);
 }
 
 .signup {
@@ -105,12 +110,17 @@
 }
 
 .crossBtn {
-  position: relative;
-  top: -12px;
-  left: 5vw;
   color: #737372;
-  width: 40%;
-  padding: 12px;
+  width: 100%;
+}
+
+.closeBtn {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(237, 234, 234);
+  border: none;
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (min-width: 769px) {

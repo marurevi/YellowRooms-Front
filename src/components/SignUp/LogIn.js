@@ -35,9 +35,11 @@ const LogIn = () => {
   };
 
   const activeRegisterModal1 = () => {
-    setStyleLogin('active');
-    // const splashBody = document.querySelector('.mainContentSplash');
-    // splashBody.classList.toggle('blur');
+    if (styleLogin === 'inactive') {
+      setStyleLogin('active');
+    } else {
+      setStyleLogin('inactive');
+    }
   };
 
   return (
@@ -49,9 +51,11 @@ const LogIn = () => {
         <form className="login-form" onSubmit={userSubmit}>
           <div className="signupTitle">
             <h3 className="signup">LogIn</h3>
-            <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
-              <ImCross />
-            </IconContext.Provider>
+            <button type="button" className="closeBtn" onClick={activeRegisterModal1}>
+              <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
+                <ImCross />
+              </IconContext.Provider>
+            </button>
           </div>
           <input
             onChange={handleUserChange}
