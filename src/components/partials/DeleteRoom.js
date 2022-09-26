@@ -20,7 +20,7 @@ const DeleteRoom = ({ id = null, name = 'Delete Room' }) => {
 };
 
 DeleteRoom.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
 
