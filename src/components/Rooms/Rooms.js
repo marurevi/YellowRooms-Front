@@ -13,7 +13,7 @@ const Rooms = () => {
     if (roomsState.pending) {
       dispatch(getRoomsActionCreator());
     }
-  }, [dispatch]);
+  }, [dispatch, roomsState]);
   return (
     <>
       <main>
@@ -24,7 +24,7 @@ const Rooms = () => {
           && roomsState.rooms.map(({ attributes: room }) => (
             <NavLink
               className="link"
-              to={`/Rooms/id=${room.id}`}
+              to={`/Rooms/${room.id}`}
               key={room.id}
             >
               <article>

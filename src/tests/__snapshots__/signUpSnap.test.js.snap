@@ -13,6 +13,8 @@ Array [
     >
       <input
         className="signInput"
+        id="username"
+        name="username"
         onChange={[Function]}
         placeholder="User"
         required={true}
@@ -20,6 +22,17 @@ Array [
       />
       <input
         className="signInput"
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        required={true}
+        type="email"
+      />
+      <input
+        className="signInput"
+        id="password"
+        name="password"
         onChange={[Function]}
         placeholder="Password"
         required={true}
@@ -28,10 +41,10 @@ Array [
       <button
         type="submit"
       >
-        Login
+        Register
       </button>
     </form>
   </div>,
-  ",",
+  ";",
 ]
 `;

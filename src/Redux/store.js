@@ -7,12 +7,12 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import roomsReducer from './Rooms/rooms';
 import reservationsReducer from './Reservations/Reservations';
-import handleUser from './Authenticate/authentication';
+import userReducer from './Authenticate/authentication';
 
 const reducers = combineReducers({
   rooms: roomsReducer,
   reservations: reservationsReducer,
-  user: handleUser,
+  user: userReducer,
 });
 
 const store = createStore(reducers, applyMiddleware(thunk, logger));

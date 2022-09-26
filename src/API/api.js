@@ -18,7 +18,6 @@ export const setToken = (newToken) => {
 
 // token is destroyed by calling this method
 export const DestroyToken = () => {
-  // token = '';
   localStorage.removeItem('token');
 };
 

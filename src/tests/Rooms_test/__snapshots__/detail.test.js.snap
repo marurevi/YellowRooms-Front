@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rooms show render the same 1`] = `
+Array [
+  <div>
+    No room found
+  </div>,
+  ";",
+]
+`;

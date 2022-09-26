@@ -19,7 +19,7 @@ const SignUp = () => {
   const [styleRegister, setStyleRegister] = useState('modalInactive');
   const [user, setUser] = useState(initialForm);
 
-  // NOTE: handle user data changes inside the form
+  //  NOTE: handle user data changes inside the form
   const handleUserChange = (e) => {
     setUser((old) => ({
       ...old,
@@ -27,12 +27,12 @@ const SignUp = () => {
     }));
   };
 
-  // NOTE: Navigate to rooms on success sign in
+  //  NOTE: Navigate to rooms on success sign in
   const changeNavigation = () => {
     navigate('/rooms');
   };
 
-  // NOTE: start registering user
+  //  NOTE: start registering user
   const userSubmit = async (e) => {
     e.preventDefault();
     dispatch(registerUser(user, changeNavigation));
@@ -48,14 +48,25 @@ const SignUp = () => {
 
   return (
     <section>
-      <button className="registerBtn" id="signBtn" type="button" onClick={activeSignUpModal}>
+      <button
+        className="registerBtn"
+        id="signBtn"
+        type="button"
+        onClick={activeSignUpModal}
+      >
         REGISTER
       </button>
       <div className={styleRegister}>
         <div className="signupTitle">
           <h3 className="signup">SignUp</h3>
-          <button type="button" className="closeBtn" onClick={activeSignUpModal}>
-            <IconContext.Provider value={{ size: '24px', className: 'crossBtn' }}>
+          <button
+            type="button"
+            className="closeBtn"
+            onClick={activeSignUpModal}
+          >
+            <IconContext.Provider
+              value={{ size: '24px', className: 'crossBtn' }}
+            >
               <ImCross />
             </IconContext.Provider>
           </button>
@@ -88,7 +99,9 @@ const SignUp = () => {
             placeholder="Password"
             required
           />
-          <button className="registerBtn" type="submit">Register</button>
+          <button className="registerBtn" type="submit">
+            Register
+          </button>
         </form>
       </div>
     </section>

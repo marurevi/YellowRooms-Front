@@ -4,39 +4,39 @@ import { useParams, useNavigate } from 'react-router-dom';
 
 const Detail = () => {
   const navigator = useNavigate();
-  let { id } = useParams();
-  id = id?.split('=')[1];
-  const room = useSelector(
-    (state) => state.rooms.filter((room) => room.id === Number(id))[0],
-  );
+  const { id } = useParams();
+
+  const room = useSelector((state) => state.rooms.rooms.find((room) => room.id === id));
+
+  const { attributes } = room;
   return room ? (
     <div>
-      <img src={room.photo} alt="Room" />
+      <img src={attributes.photo} alt="Room" />
       <aside>
         <div>
           <span>Stars</span>
-          <span>{room.stars}</span>
+          <span>{attributes.stars}</span>
         </div>
         <div>
           <span>Room name</span>
-          <span>{room.name}</span>
+          <span>{attributes.name}</span>
         </div>
         <div>
           <span>max number of guest</span>
-          <span>{room.persons_allowed}</span>
+          <span>{attributes.persons_allowed}</span>
         </div>
         <div>
           <span>price</span>
-          <span>{room.price}</span>
+          <span>{attributes.price}</span>
         </div>
         <div>
           <span>description</span>
-          <span>{room.description}</span>
+          <span>{attributes.description}</span>
         </div>
         <div>
           <button
             type="button"
-            onClick={() => navigator(`/Reserve/room_id=${room.id}`)}
+            onClick={() => navigator(`/Reserve/${room.id}`)}
           >
             Reserve Room
           </button>
