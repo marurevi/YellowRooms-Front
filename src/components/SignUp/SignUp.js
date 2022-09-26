@@ -16,7 +16,7 @@ const SignUp = () => {
       password: '',
     },
   };
-  const [styleRegister, setStyleRegister] = useState('inactive');
+  const [styleRegister, setStyleRegister] = useState('modalInactive');
   const [user, setUser] = useState(initialForm);
 
   // NOTE: handle user data changes inside the form
@@ -39,13 +39,11 @@ const SignUp = () => {
   };
 
   const activeSignUpModal = () => {
-    if (styleRegister === 'inactive') {
-      setStyleRegister('active');
+    if (styleRegister === 'modalInactive') {
+      setStyleRegister('modalActive');
     } else {
-      setStyleRegister('inactive');
+      setStyleRegister('modalInactive');
     }
-    // const splashBody = document.querySelector('.splash-page');
-    // splashBody.classList.toggle('blur');
   };
 
   return (

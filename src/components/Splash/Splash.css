@@ -68,11 +68,11 @@
   display: none;
 }
 
-.inactive {
+.modalInactive {
   display: none;
 }
 
-.active {
+.modalActive {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -143,7 +143,7 @@
     margin: -10% 0 0 0;
   }
 
-  .active {
+  .modalActive {
     width: 50%;
   }
 

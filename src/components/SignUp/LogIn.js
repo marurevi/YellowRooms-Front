@@ -15,7 +15,7 @@ const LogIn = () => {
       password: '',
     },
   };
-  const [styleLogin, setStyleLogin] = useState('inactive');
+  const [styleLogin, setStyleLogin] = useState('modalInactive');
   const [user, setUser] = useState(initialForm);
   const handleUserChange = (e) => {
     setUser((old) => ({
@@ -35,10 +35,10 @@ const LogIn = () => {
   };
 
   const activeRegisterModal1 = () => {
-    if (styleLogin === 'inactive') {
-      setStyleLogin('active');
+    if (styleLogin === 'modalInactive') {
+      setStyleLogin('modalActive');
     } else {
-      setStyleLogin('inactive');
+      setStyleLogin('modalInactive');
     }
   };
 
