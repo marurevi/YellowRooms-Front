@@ -51,6 +51,7 @@ a {
 
 .nav-item {
   margin: 2.5rem 0 2.5rem 5rem;
+  padding: 0.5rem 1rem;
 }
 
 .nav-link {
@@ -65,7 +66,13 @@ a {
 .nav-link:hover {
   background-color: #91bd04;
   color: #fff;
-  width: 100%;
+  height: max-content;
+}
+
+.nav-item:hover {
+  background-color: #91bd04;
+  color: #fff;
+  height: max-content;
 }
 
 .nav-logo {
