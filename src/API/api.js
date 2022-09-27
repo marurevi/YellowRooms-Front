@@ -29,9 +29,9 @@ export async function sendGet(custom = '', token) {
 }
 
 // Custom route must be provided with ID for destroy to find the room
-export async function sendDelete(custom) {
+export async function sendDelete(custom, token) {
   return myAxios()
-    .delete(custom)
+    .delete(custom, { headers: { Authorization: token } })
     .then((response) => response.status);
 }
 
