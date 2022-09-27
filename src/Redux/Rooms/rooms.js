@@ -7,11 +7,10 @@ const GET_ROOMS_FAILED = 'details/rooms/GET_ROOMS_FAILED';
 const DELETE_ROOM = 'details/rooms/DELETE_ROOM';
 const CREATE_ROOM = 'details/rooms/CREATE_ROOM';
 
-export const getRoomsActionCreator = () => async (dispatch, getState) => {
+export const getRoomsActionCreator = () => async (dispatch) => {
   dispatch({ type: GET_ROOMS_STARTED });
-  const { token } = getState().user;
   try {
-    const rooms = await sendGet('rooms', token);
+    const rooms = await sendGet('rooms');
     dispatch({
       type: GET_ROOMS_SUCCEEDED,
       payload: [...rooms.data],
@@ -28,11 +27,9 @@ export const deleteRoomActionCreator = (id) => async (dispatch) => {
   dispatch({ type: DELETE_ROOM, payload: { status, id } });
 };
 
-export const createRoomActionCreator = (room, navigate) => async (dispatch, getState) => {
-  const { token } = getState().user;
-
+export const createRoomActionCreator = (room, navigate) => async (dispatch) => {
   try {
-    const response = await sendPost('rooms', room, token);
+    const response = await sendPost('rooms', room);
     dispatch({
       type: CREATE_ROOM,
       payload: response.data.data,
