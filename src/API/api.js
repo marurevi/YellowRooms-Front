@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
 
 export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
-let token = getCurrentUser().token || '';
+let token = getCurrentUser()?.token || '';
 const myAxios = () => axios.create({
   baseURL: 'https://yellow-rooms.herokuapp.com/api/v1/',
   headers: {
