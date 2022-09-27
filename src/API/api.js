@@ -2,8 +2,7 @@ import axios from 'axios';
 
 // user is taken by calling this method
 export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
-// user is set in LocalStorage by calling this method
-// token is set locally to all requests
+
 export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
 let token = '' || getCurrentUser().token;
 const myAxios = () => axios.create({
@@ -14,6 +13,8 @@ const myAxios = () => axios.create({
   },
 });
 
+// user is set in LocalStorage by calling this method
+// token is set locally to all requests
 export const setCurrentUser = (user) => {
   token = user.token;
   localStorage.setItem('user', JSON.stringify(user));
