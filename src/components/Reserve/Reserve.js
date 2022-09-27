@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { sendPost } from '../../API/api';
 
 const Reserve = () => {
   const { room_id: roomId } = useParams();
   const room = useSelector((state) => state.rooms.rooms.find((room) => room.id === roomId));
   const userId = useSelector((state) => state.user.id);
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     user_id: userId,
     room_id: roomId,
@@ -17,9 +18,13 @@ const Reserve = () => {
 
   const reserveRoomSubmit = async (e) => {
     e.preventDefault();
-    await sendPost('reservations', form).catch((error) => {
-      console.error(error);
-    });
+    await sendPost('reservations', form)
+      .then(() => {
+        navigate('/reservations');
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const onChange = (e) => {
