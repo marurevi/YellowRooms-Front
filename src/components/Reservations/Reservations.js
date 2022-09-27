@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Reservation from "./Reservation";
-import { getReservations } from "../../Redux/Reservations/Reservations";
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Reservation from './Reservation';
+import { getReservations } from '../../Redux/Reservations/Reservations';
 
 const Reservations = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getReservations());
   }, []);
-  const userReservations = useSelector((state) =>
-    state.reservations.filter(
-      (reservation) => reservation.attributes.user_id === state.user.id
-    )
-  );
+  const userReservations = useSelector((state) => state.reservations.filter(
+    (reservation) => reservation.attributes.user_id === state.user.id,
+  ));
   return userReservations.length ? (
     <div>
       <h2>MY RESERVATIONS</h2>

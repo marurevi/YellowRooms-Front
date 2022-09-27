@@ -1,26 +1,23 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { sendPost } from "../../API/api";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { sendPost } from '../../API/api';
+
 const Reserve = () => {
   const { room_id: roomId } = useParams();
-  const room = useSelector((state) =>
-    state.rooms.rooms.find((room) => room.id === roomId)
-  );
+  const room = useSelector((state) => state.rooms.rooms.find((room) => room.id === roomId));
   const userId = useSelector((state) => state.user.id);
-  const token = useSelector((state) => state.user.token);
-  // const reservationsURL = 'http://localhost:3001/reservations';
   const [form, setForm] = useState({
     user_id: userId,
     room_id: roomId,
-    start_date: "",
-    end_date: "",
-    city: "",
+    start_date: '',
+    end_date: '',
+    city: '',
   });
 
   const reserveRoomSubmit = async (e) => {
     e.preventDefault();
-    await sendPost("reservations", form, token).catch((error) => {
+    await sendPost('reservations', form).catch((error) => {
       console.error(error);
     });
   };
@@ -36,24 +33,28 @@ const Reserve = () => {
     <div>
       <h2>Reserve Room</h2>
       <form onSubmit={reserveRoomSubmit}>
-        <label htmlFor="start_date">Start reservation</label>
-        <input
-          onChange={onChange}
-          name="start_date"
-          className="signInput"
-          id="start_date"
-          type="date"
-          required
-        />
-        <label htmlFor="end_date">End reservation</label>
-        <input
-          onChange={onChange}
-          name="end_date"
-          id="end_date"
-          className="signInput"
-          type="date"
-          required
-        />
+        <label htmlFor="start_date">
+          Start reservation
+          <input
+            onChange={onChange}
+            name="start_date"
+            className="signInput"
+            id="start_date"
+            type="date"
+            required
+          />
+        </label>
+        <label htmlFor="end_date">
+          End reservation
+          <input
+            onChange={onChange}
+            name="end_date"
+            id="end_date"
+            className="signInput"
+            type="date"
+            required
+          />
+        </label>
         <input
           onChange={onChange}
           name="city"

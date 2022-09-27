@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
-import { sendPost } from "../../API/api";
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { sendPost } from '../../API/api';
+
 const AllReserves = () => {
   const rooms = useSelector((state) => state.rooms.rooms);
 
   const userId = useSelector((state) => state.user.id);
-  const token = useSelector((state) => state.user.token);
   const [form, setForm] = useState({
     user_id: userId,
     room_id: 0,
-    start_date: "",
-    end_date: "",
-    city: "",
+    start_date: '',
+    end_date: '',
+    city: '',
   });
 
   const reserveRoomSubmit = async (e) => {
     e.preventDefault();
     console.log(form);
-    await sendPost("reservations", form, token).catch((error) => {
+    await sendPost('reservations', form).catch((error) => {
       console.error(error);
     });
   };
