@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { sendPost } from '../../API/api';
 
 const AllReserves = () => {
-  const reservationsURL = 'http://localhost:3001/reservations';
+  const navigate = useNavigate();
   const rooms = useSelector((state) => state.rooms.rooms);
+
+  const userId = useSelector((state) => state.user.id);
   const [form, setForm] = useState({
-    user_id: 0,
+    user_id: userId,
     room_id: 0,
-    firstName: '',
     start_date: '',
     end_date: '',
     city: '',
@@ -16,18 +18,13 @@ const AllReserves = () => {
 
   const reserveRoomSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post(reservationsURL, {
-        user_id: parseInt(form.user_id, 10),
-        room_id: parseInt(form.room_id, 10),
-        start_date: form.start_date,
-        end_date: form.end_date,
-        city: form.city,
+    console.log(form);
+    await sendPost('reservations', form)
+      .then(() => {
+        navigate('/reservations');
       })
-      .then((response) => {
-        if (response.status === 201) {
-          window.location.href = '/Reservations';
-        }
+      .catch((error) => {
+        console.error(error);
       });
   };
 
@@ -42,14 +39,6 @@ const AllReserves = () => {
     <div>
       <h2>Reserve Room</h2>
       <form onSubmit={reserveRoomSubmit}>
-        <input
-          onChange={onChange}
-          name="user_id"
-          className="signInput"
-          type="number"
-          placeholder="User"
-          required
-        />
         <select onChange={onChange} name="room_id" required>
           <option>SELECT OPTION</option>
           {rooms.map((room) => (
@@ -62,7 +51,7 @@ const AllReserves = () => {
           onChange={onChange}
           name="start_date"
           className="signInput"
-          type="text"
+          type="date"
           placeholder="Start reservation"
           required
         />
@@ -70,7 +59,7 @@ const AllReserves = () => {
           onChange={onChange}
           name="end_date"
           className="signInput"
-          type="text"
+          type="date"
           placeholder="End reservation"
           required
         />
@@ -82,14 +71,7 @@ const AllReserves = () => {
           placeholder="City"
           required
         />
-        <button
-          disabled={
-            form.room_id === 0 || form.room_id === 'SELECT OPTION'
-          }
-          type="submit"
-        >
-          Create Reservation
-        </button>
+        <button type="submit">Create Reservation</button>
       </form>
     </div>
   );

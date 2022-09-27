@@ -1,38 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
+import DeleteReservation from '../partials/DeleteReservation';
 
-const Reservation = (props) => {
-  const {
-    userId, roomId, startDate, endDate, city,
-  } = props;
-
+const Reservation = ({ reservationId }) => {
+  console.log(reservationId);
+  const reservation = useSelector((store) => store.reservations.find(
+    (reservation) => reservation.id === reservationId,
+  ));
   return (
     <div className="reservation">
-      <p>
-        user id:
-        {' '}
-        {userId}
-      </p>
-      <p>
-        room id:
-        {' '}
-        {roomId}
-      </p>
-      <p>
-        start date:
-        {' '}
-        {startDate}
-      </p>
-      <p>
-        end date:
-        {' '}
-        {endDate}
-      </p>
-      <p>
-        city:
-        {' '}
-        {city}
-      </p>
+      <p>{`Reservation city: ${reservation.attributes.city}`}</p>
+      <p>{`Reservation start date: ${reservation.attributes.start_date}`}</p>
+      <p>{`Reservation end date: ${reservation.attributes.end_date}`}</p>
+      <DeleteReservation id={reservation.id} />
     </div>
   );
 };
@@ -40,17 +21,5 @@ const Reservation = (props) => {
 export default Reservation;
 
 Reservation.propTypes = {
-  userId: PropTypes.number,
-  roomId: PropTypes.number,
-  startDate: PropTypes.string,
-  endDate: PropTypes.string,
-  city: PropTypes.string,
-};
-
-Reservation.defaultProps = {
-  userId: '0',
-  roomId: '0',
-  startDate: '12/12/2000',
-  endDate: '12/12/2001',
-  city: 'city',
+  reservationId: PropTypes.string.isRequired,
 };
