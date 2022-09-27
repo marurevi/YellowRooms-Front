@@ -7,6 +7,8 @@
 
 .deleteRoomPicture {
   width: 128px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .deleteDiv {
@@ -17,4 +19,17 @@
 
 .deleteSection {
   text-align: center;
+}
+
+.roomName {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.deleteRoomBtn {
+  width: 80%;
+  height: 50%;
+  background-color: rgb(255, 46, 46);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

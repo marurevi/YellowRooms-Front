@@ -11,7 +11,7 @@ const DeleteRoom = () => {
         <div key={room.id} className="deleteDiv">
           <img src={room.attributes.photo} alt="Room" className="deleteRoomPicture" />
           <div className="deleteSection">
-            <p>{room.attributes.name}</p>
+            <p className="roomName">{room.attributes.name}</p>
             <DeleteButton id={room.id} />
           </div>
         </div>

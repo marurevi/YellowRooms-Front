@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteRoomActionCreator } from '../../Redux/Rooms/rooms';
+import '../DeleteRoom/DeleteRoom.css';
 
 const DeleteRoom = ({ id = null }) => {
   const dispatch = useDispatch();
@@ -9,8 +10,8 @@ const DeleteRoom = ({ id = null }) => {
     dispatch(deleteRoomActionCreator(id));
   };
   return (
-    <button type="button" onClick={deleteRoom}>
-      Delete room
+    <button className="deleteRoomBtn" type="button" onClick={deleteRoom}>
+      DELETE ROOM
     </button>
   );
 };
