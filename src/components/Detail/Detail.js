@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import './Detail.css';
 
 const Detail = () => {
   const navigator = useNavigate();
@@ -10,28 +11,27 @@ const Detail = () => {
 
   const { attributes } = room;
   return room ? (
-    <div>
-      <img src={attributes.photo} alt="Room" />
-      <aside>
-        <div>
+    <div className="room">
+      <img src={attributes.photo} alt="Room" className="roomPicture" />
+      <aside className="roomDetails">
+        <div className="roomName">
+          <h2>{attributes.name}</h2>
+        </div>
+        <div className="roomStars">
           <span>Stars</span>
           <span>{attributes.stars}</span>
         </div>
-        <div>
-          <span>Room name</span>
-          <span>{attributes.name}</span>
-        </div>
-        <div>
-          <span>max number of guest</span>
+        <div className="roomGuests">
+          <span>Ideal for </span>
           <span>{attributes.persons_allowed}</span>
+          <span> people</span>
         </div>
-        <div>
-          <span>price</span>
-          <span>{attributes.price}</span>
-        </div>
-        <div>
-          <span>description</span>
+        <div className="roomDescription">
           <span>{attributes.description}</span>
+        </div>
+        <div className="roomPrice">
+          <span>Price: $</span>
+          <span>{attributes.price}</span>
         </div>
         <div>
           <button
