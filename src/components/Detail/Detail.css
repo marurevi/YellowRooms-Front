@@ -7,6 +7,8 @@
 
 .roomPicture {
   width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .roomDetails {
@@ -17,7 +19,11 @@
   padding: 12px 0;
 }
 
-.roomName {
+.roomName1 {
+  display: none;
+}
+
+.roomName2 {
   font-size: 28px;
   margin-bottom: 12px;
   text-align: center;
@@ -52,7 +58,7 @@
   margin: 2% 0;
   width: 100%;
   background-color: #cececc;
-  padding: 12px;
+  padding: 12px 0;
   border: 4px dashed #ffde59;
   border-radius: 4px;
 }
@@ -88,7 +94,7 @@
 
 @media only screen and (min-width: 769px) {
   .room {
-    height: 100vh;
+    height: 84vh;
     flex-direction: row;
     justify-content: space-between;
   }
@@ -97,16 +103,42 @@
     width: 70%;
   }
 
-  .roomName {
-    font-size: 32px;
+  .roomName1 {
+    display: block;
+    font-size: 30px;
     border-bottom: 6px dashed #ffde59;
     padding-bottom: 8px;
-    text-align: right;
+    text-align: left;
+  }
+  
+  .roomName2 {
+    display: none;
   }
 
   .roomDetails {
     height: 60%;
     width: 25%;
     justify-content: space-around;
+  }
+
+  .roomPrice {
+    font-size: calc(10px + 6 * ((100vw - 100px) / 680));
+    margin-top: 12px;
+  }
+
+  .reserveBtn {
+    font-size: calc(8px + 6 * ((100vw - 100px) / 680));
+  }
+
+  .roomDescription {
+    font-size: calc(8px + 6 * ((100vw - 100px) / 680));
+  }
+
+  .roomGuests {
+    font-size: calc(8px + 6 * ((100vw - 100px) / 680));
+  }
+
+  .roomStars {
+    padding: 24px 0;
   }
 }
