@@ -47,13 +47,13 @@ const Detail = () => {
             onClick={() => navigator(`/Reserve/${room.id}`)}
           >
             <IconContext.Provider
-              value={{ size: '24px' }}
+              value={{ size: '24px', className: 'iconBtn' }}
             >
               <MdOutlineHotel />
             </IconContext.Provider>
             Reserve Room
             <IconContext.Provider
-              value={{ size: '24px' }}
+              value={{ size: '24px', className: 'iconBtn' }}
             >
               <BsArrowRightCircle />
             </IconContext.Provider>
