@@ -56,9 +56,12 @@
 }
 
 .reserveBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: #fff;
   background-color: #91bd04;
-  padding: 12px 24px;
+  padding: 12px;
   border: 4px #737372;
   border-radius: 20px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
+import { IconContext } from 'react-icons';
+import { MdOutlineHotel } from 'react-icons/md';
+import { BsArrowRightCircle } from 'react-icons/bs';
 import './Detail.css';
 
 const Detail = () => {
@@ -43,7 +46,17 @@ const Detail = () => {
             className="reserveBtn"
             onClick={() => navigator(`/Reserve/${room.id}`)}
           >
+            <IconContext.Provider
+              value={{ size: '24px' }}
+            >
+              <MdOutlineHotel />
+            </IconContext.Provider>
             Reserve Room
+            <IconContext.Provider
+              value={{ size: '24px' }}
+            >
+              <BsArrowRightCircle />
+            </IconContext.Provider>
           </button>
         </div>
       </aside>
