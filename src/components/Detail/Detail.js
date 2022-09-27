@@ -30,12 +30,17 @@ const Detail = () => {
           <span>{attributes.description}</span>
         </div>
         <div className="roomPrice">
-          <span>Price: $</span>
-          <span>{attributes.price}</span>
+          <span>Price:</span>
+          <span>
+            $
+            {' '}
+            {attributes.price}
+          </span>
         </div>
-        <div>
+        <div className="roomButton">
           <button
             type="button"
+            className="reserveBtn"
             onClick={() => navigator(`/Reserve/${room.id}`)}
           >
             Reserve Room

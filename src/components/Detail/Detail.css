@@ -34,6 +34,7 @@
 
 .roomPrice {
   font-size: 24px;
+  padding: 0 12px;
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -42,4 +43,25 @@
 .roomPrice span {
   width: fit-content;
   margin: 2% 0;
+}
+
+.roomStars {
+  margin: 2% 0;
+  width: fit-content;
+}
+
+.roomButton {
+  margin-top: 20%;
+  width: fit-content;
+}
+
+.reserveBtn {
+  color: #fff;
+  background-color: #91bd04;
+  padding: 12px 24px;
+  border: 4px #737372;
+  border-radius: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 22px;
+  cursor: pointer;
 }
