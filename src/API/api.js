@@ -1,30 +1,30 @@
 import axios from 'axios';
 
 export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
-let token = '';
 const myAxios = () => axios.create({
   baseURL: 'https://yellow-rooms.herokuapp.com/api/v1/',
   headers: {
     'Content-Type': 'application/json',
-    Authorization: token,
   },
 });
 
-// token is set by calling this method
-export const setToken = (newToken) => {
-  token = newToken;
-  localStorage.setItem('token', token);
+// user is set by calling this method
+export const setCurrentUser = (user) => {
+  localStorage.setItem('user', JSON.stringify(user));
 };
 
-// token is destroyed by calling this method
-export const DestroyToken = () => {
-  localStorage.removeItem('token');
+// user is destroyed by calling this method
+export const destroyCurrentUser = () => {
+  localStorage.removeItem('user');
 };
+
+// user is taken by calling this method
+export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
 
 // custom is to alternate the endpoint
-export async function sendGet(custom = '') {
+export async function sendGet(custom = '', token) {
   return myAxios()
-    .get(custom)
+    .get(custom, { headers: { Authorization: token } })
     .then((response) => response.data);
 }
 
@@ -35,6 +35,8 @@ export async function sendDelete(custom) {
     .then((response) => response.status);
 }
 
-export async function sendPost(custom, data) {
-  return myAxios().post(custom, data);
+export async function sendPost(custom, data, token = '') {
+  return myAxios().post(custom, data, {
+    headers: { Authorization: token },
+  });
 }
