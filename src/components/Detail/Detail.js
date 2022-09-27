@@ -4,6 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import { MdOutlineHotel } from 'react-icons/md';
 import { BsArrowRightCircle } from 'react-icons/bs';
+import { AiFillStar } from 'react-icons/ai';
 import './Detail.css';
 
 const Detail = () => {
@@ -21,8 +22,15 @@ const Detail = () => {
           {attributes.name}
         </div>
         <div className="roomStars">
-          <span>Stars</span>
-          <span>{attributes.stars}</span>
+          <ul className="stars">
+            {(() => {
+              const rows = [];
+              for (let i = 0; i < attributes.stars; i += 1) {
+                rows.push(<AiFillStar color="#ffde59" size="32px" className="iconBtn" key={i} />);
+              }
+              return rows;
+            })()}
+          </ul>
         </div>
         <div className="roomGuests">
           <span>Ideal for </span>

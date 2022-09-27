@@ -13,12 +13,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
+  width: 80%;
+  padding: 12px 0;
 }
 
 .roomName {
   font-size: 28px;
-  width: fit-content;
+  margin-bottom: 12px;
+  text-align: center;
 }
 
 .roomGuests {
@@ -48,11 +50,21 @@
 
 .roomStars {
   margin: 2% 0;
-  width: fit-content;
+  width: 100%;
+  background-color: #cececc;
+  padding: 12px;
+  border: 4px dashed #ffde59;
+  border-radius: 4px;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
 }
 
 .roomButton {
   margin-top: 10%;
+  margin-bottom: 24px;
   width: 100%;
 }
 
@@ -72,4 +84,29 @@
 
 .iconBtn {
   width: fit-content;
+}
+
+@media only screen and (min-width: 769px) {
+  .room {
+    height: 100vh;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .roomPicture {
+    width: 70%;
+  }
+
+  .roomName {
+    font-size: 32px;
+    border-bottom: 6px dashed #ffde59;
+    padding-bottom: 8px;
+    text-align: right;
+  }
+
+  .roomDetails {
+    height: 60%;
+    width: 25%;
+    justify-content: space-around;
+  }
 }
