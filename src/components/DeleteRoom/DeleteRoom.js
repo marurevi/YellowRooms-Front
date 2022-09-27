@@ -7,6 +7,7 @@ const DeleteRoom = () => {
   const rooms = useSelector((store) => store.rooms.rooms);
   return rooms.length > 0 ? (
     <div className="deleteRoomPage">
+      <h1 className="warningTitle">WARNING: DELETE PAGE</h1>
       {rooms.map((room) => (
         <div key={room.id} className="deleteDiv">
           <img src={room.attributes.photo} alt="Room" className="deleteRoomPicture" />
