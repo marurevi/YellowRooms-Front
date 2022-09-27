@@ -7,11 +7,10 @@ const GET_ROOMS_FAILED = 'details/rooms/GET_ROOMS_FAILED';
 const DELETE_ROOM = 'details/rooms/DELETE_ROOM';
 const CREATE_ROOM = 'details/rooms/CREATE_ROOM';
 
-export const getRoomsActionCreator = () => async (dispatch, getState) => {
+export const getRoomsActionCreator = () => async (dispatch) => {
   dispatch({ type: GET_ROOMS_STARTED });
-  const { token } = getState().user;
   try {
-    const rooms = await sendGet('rooms', token);
+    const rooms = await sendGet('rooms');
     dispatch({
       type: GET_ROOMS_SUCCEEDED,
       payload: [...rooms.data],
@@ -24,15 +23,13 @@ export const getRoomsActionCreator = () => async (dispatch, getState) => {
 // REVIEW: delete method
 // NOTE: his method is not tested yet
 export const deleteRoomActionCreator = (id) => async (dispatch) => {
-  const status = await sendDelete(`rooms/${id}`);
-  dispatch({ type: DELETE_ROOM, payload: { status, id } });
+  await sendDelete(`rooms/${id}`);
+  dispatch({ type: DELETE_ROOM, payload: id });
 };
 
-export const createRoomActionCreator = (room, navigate) => async (dispatch, getState) => {
-  const { token } = getState().user;
-
+export const createRoomActionCreator = (room, navigate) => async (dispatch) => {
   try {
-    const response = await sendPost('rooms', room, token);
+    const response = await sendPost('rooms', room);
     dispatch({
       type: CREATE_ROOM,
       payload: response.data.data,
@@ -63,10 +60,12 @@ const roomsReducer = (state = initialState, action) => {
       };
     case GET_ROOMS_FAILED:
       return { ...state, errors: action.payload, status: 'failed' };
-    case DELETE_ROOM:
-      return action.payload.status
-        ? [...state].filter((room) => room.id !== action.payload.id)
-        : state;
+    case DELETE_ROOM: {
+      const filteredRooms = state.rooms.filter(
+        (room) => room.id !== action.payload,
+      );
+      return { ...state, rooms: filteredRooms };
+    }
     case CREATE_ROOM:
       return { ...state, pending: true };
     default:

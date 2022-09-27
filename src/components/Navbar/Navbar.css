@@ -82,15 +82,15 @@ a {
 
 @media only screen and (max-width: 768px) {
   .navbar {
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
   }
 
   .nav-logo {
-    width: 120px;
-    margin: 3rem 0;
+    width: 80px;
+    margin: 0;
   }
 
   .nav-menu {

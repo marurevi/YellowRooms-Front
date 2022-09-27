@@ -10,7 +10,7 @@ const DeleteRoom = () => {
         <div key={room.id}>
           <p>{room.attributes.name}</p>
           <div>
-            <DeleteButton name="Delete room" id={room.id} />
+            <DeleteButton id={room.id} />
           </div>
         </div>
       ))}
