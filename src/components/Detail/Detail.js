@@ -18,7 +18,7 @@ const Detail = () => {
       <img src={attributes.photo} alt="Room" className="roomPicture" />
       <aside className="roomDetails">
         <div className="roomName">
-          <h2>{attributes.name}</h2>
+          {attributes.name}
         </div>
         <div className="roomStars">
           <span>Stars</span>

@@ -1,35 +1,35 @@
 .room {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 
 .roomPicture {
-  width: 70%;
+  width: 80%;
 }
 
 .roomDetails {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
-  width: 25%;
+  align-items: center;
+  width: 70%;
 }
 
 .roomName {
+  font-size: 28px;
   width: fit-content;
-  font-size: 36px;
 }
 
 .roomGuests {
-  background-color: #fff;
-  font-size: 20px;
-  padding: 12px;
+  background-color: #cececc;
+  font-size: 16px;
+  padding: 2%;
 }
 
 .roomDescription {
-  font-size: 18px;
-  padding: 12px;
+  font-size: 14px;
+  padding: 2%;
 }
 
 .roomPrice {
@@ -38,6 +38,7 @@
   display: flex;
   justify-content: space-between;
   background-color: #fff;
+  border-bottom: 4px solid #ffde59;
 }
 
 .roomPrice span {
@@ -51,7 +52,7 @@
 }
 
 .roomButton {
-  margin-top: 20%;
+  margin-top: 10%;
   width: fit-content;
 }
 
