@@ -30,29 +30,3 @@ const Rooms = () => {
 };
 
 export default Rooms;
-
-// import { TiSocialFacebook } from 'react-icons/ti';
-// import { RiTwitterFill } from 'react-icons/ri';
-// import { SiInstagram } from 'react-icons/si';
-// <h3>{room.room_name}</h3>
-// <p>{room.description}</p>
-
-// <div className="card">
-//   <div id={room.id}>
-//     <img src={room.photo} alt={room.room_name} />
-//   </div>
-//   <div>
-//     <h3>{room.room_name}</h3>
-//     <p>{room.description}</p>
-//     <section>
-//       <span>
-//         <TiSocialFacebook />
-//       </span>
-//       <span>
-//         <RiTwitterFill />
-//       </span>
-//       <span>
-//         <SiInstagram />
-//       </span>
-//     </section>
-//   </div>

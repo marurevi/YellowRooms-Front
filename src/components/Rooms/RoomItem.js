@@ -5,13 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { NavLink } from 'react-router-dom';
+import { TiSocialFacebook } from 'react-icons/ti';
+import { RiTwitterFill } from 'react-icons/ri';
+import { SiInstagram } from 'react-icons/si';
 
 const RoomItem = (props) => {
   const { room } = props;
 
   const imageStyle = {
     height: '40%',
-    paddingTop: '80%',
+    paddingTop: '60%',
     width: '100%',
     objectFit: 'cover',
   };
@@ -19,9 +22,8 @@ const RoomItem = (props) => {
   const cardStyle = {
     margin: '0 20px',
     width: '40vw',
-    height: '80vh',
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     flexDirection: 'column',
     alignItems: 'center',
   };
@@ -38,7 +40,12 @@ const RoomItem = (props) => {
           <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 'bold' }}>
             {room.name}
           </Typography>
-          <Typography component="p" style={{ margin: '1rem 0 10rem 0' }}>{room.description}</Typography>
+          <Typography component="p" style={{ margin: '2rem 0' }}>{room.description}</Typography>
+          <ul className="social-media-icons">
+            <li><TiSocialFacebook /></li>
+            <li><RiTwitterFill /></li>
+            <li><SiInstagram /></li>
+          </ul>
         </CardContent>
       </Card>
     </NavLink>
