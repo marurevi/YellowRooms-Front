@@ -40,24 +40,24 @@ const Reserve = () => {
       <p className="reserveRoomName">{room.attributes.name}</p>
       <p className="reserveRoomDescription">{room.attributes.description}</p>
       <form className="reserveRoomForm" onSubmit={reserveRoomSubmit}>
-        <label htmlFor="start_date">
+        <label className="labelReserveInput" htmlFor="start_date">
           Start Your Journey
           <input
             onChange={onChange}
             name="start_date"
-            className="signInput"
+            className="dateInput"
             id="start_date"
             type="date"
             required
           />
         </label>
-        <label htmlFor="end_date">
+        <label className="labelReserveInput" id="endLabel" htmlFor="end_date">
           The End
           <input
             onChange={onChange}
             name="end_date"
             id="end_date"
-            className="signInput"
+            className="dateInput"
             type="date"
             required
           />

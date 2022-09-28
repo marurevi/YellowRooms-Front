@@ -19,17 +19,17 @@
 .reserveRoomDescription {
   width: 70%;
   font-size: 12px;
-  margin: 10%;
+  margin: 5%;
 }
 
 .reserveRoomForm {
   display: grid;
   grid-template-columns: 50% 50%;
-  width: 70%;
+  width: 80%;
 }
 
 .bookRoom {
-  width: 90%;
+  width: 95%;
   padding: 12px;
   margin: 3% 0;
   color: #91bd04;
@@ -47,7 +47,7 @@
 }
 
 .selectCityReserve {
-  width: 90%;
+  width: 95%;
   padding: 12px 24px;
   margin: 3% 0;
   color: #fff;
@@ -61,4 +61,70 @@
 .selectCityReserve::placeholder {
   color: #fff;
   opacity: 1;
+}
+
+.dateInput {
+  padding: 12px 10px;
+  margin: 6% 0;
+  color: #fff;
+  background-color: #91bd04;
+  border: 1px solid #fff;
+  border-radius: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+}
+
+.dateInput::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.labelReserveInput {
+  width: 95%;
+  font-size: 14px;
+}
+
+#endLabel {
+  justify-self: end;
+}
+
+@media only screen and (min-width: 769px) {
+  .labelReserveInput {
+    width: 70%;
+    font-size: 26px;
+  }
+
+  #endLabel {
+    justify-self: center;
+  }
+
+  .selectCityReserve {
+    width: 70%;
+    font-size: 26px;
+  }
+
+  .bookRoom {
+    width: 70%;
+    font-size: 26px;
+    justify-self: center;
+  }
+
+  .reserveRoomForm {
+    width: 60%;
+    justify-items: center;
+  }
+
+  .reserveRoomDescription {
+    width: 60%;
+    font-size: 20px;
+  }
+
+  .reserveRoomName {
+    width: 50%;
+    font-size: 36px;
+  }
+
+  .dateInput {
+    padding: 12px;
+    font-size: 26px;
+  }
 }
