@@ -10,7 +10,7 @@ const RoomItem = (props) => {
   const { room } = props;
 
   const imageStyle = {
-    height: 0,
+    height: '40%',
     paddingTop: '80%',
     width: '100%',
     objectFit: 'cover',
@@ -18,7 +18,8 @@ const RoomItem = (props) => {
 
   const cardStyle = {
     margin: '0 20px',
-    height: '100%',
+    width: '40vw',
+    height: '80vh',
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'column',
@@ -37,7 +38,7 @@ const RoomItem = (props) => {
           <Typography gutterBottom variant="h5" component="h2" sx={{ fontWeight: 'bold' }}>
             {room.name}
           </Typography>
-          <Typography component="p">{room.description}</Typography>
+          <Typography component="p" style={{ margin: '1rem 0 10rem 0' }}>{room.description}</Typography>
         </CardContent>
       </Card>
     </NavLink>

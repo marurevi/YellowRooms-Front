@@ -25,7 +25,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  z-index: 999;
+  z-index: 1005;
 }
 
 .hamburger {
@@ -64,7 +64,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.logoutBtn{
+.logoutBtn {
   font-size: 1.6rem;
   font-weight: bolder;
   padding: 0.5rem;
@@ -80,7 +80,7 @@ a {
   align-self: center;
 }
 
-.logoutBtn:hover{
+.logoutBtn:hover {
   box-shadow: #91bd04 2px 2px 10px;
 }
 
@@ -107,7 +107,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    z-index: 999;
+    z-index: 1005;
   }
 
   .nav-logo {
@@ -125,6 +125,7 @@ a {
     height: 100vh;
     align-self: center;
     padding: 3rem 0 20rem 0;
+    z-index: 1005;
   }
 
   .nav-menu.active {
@@ -141,7 +142,7 @@ a {
     margin: 2.5rem 0;
   }
 
-  .logoutBtn{
+  .logoutBtn {
     font-size: 1.6rem;
     font-weight: bolder;
     padding: 0.5rem;
@@ -156,8 +157,8 @@ a {
     justify-self: center;
     align-self: center;
   }
-  
-  .logoutBtn:hover{
+
+  .logoutBtn:hover {
     box-shadow: #91bd04 2px 2px 10px;
   }
 
@@ -169,6 +170,7 @@ a {
     width: 50px;
     margin-bottom: 2rem;
     margin-right: 2rem;
+    z-index: 1006;
   }
 
   .hamburger.active .bar:nth-child(2) {
