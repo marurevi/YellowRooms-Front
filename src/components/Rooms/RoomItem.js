@@ -22,6 +22,7 @@ const RoomItem = (props) => {
   const cardStyle = {
     margin: '0 20px',
     width: '40vw',
+    height: '70vh',
     display: 'flex',
     justifyContent: 'flex-start',
     flexDirection: 'column',
