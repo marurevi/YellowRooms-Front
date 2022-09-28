@@ -4,14 +4,12 @@ import { useSelector } from 'react-redux';
 import DeleteReservation from '../partials/DeleteReservation';
 
 const Reservation = ({ reservationId }) => {
-  console.log(reservationId);
   const reservation = useSelector((store) => store.reservations.find(
     (reservation) => reservation.id === reservationId,
   ));
   const reservedRoom = useSelector((store) => store.rooms.rooms.find(
     (room) => Number(room.id) === reservation.attributes.room_id,
   ));
-  console.log(reservedRoom);
   return (
     <div
       className="reservation"
