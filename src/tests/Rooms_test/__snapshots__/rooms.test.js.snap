@@ -2,14 +2,17 @@
 
 exports[`Rooms show render the same 1`] = `
 Array [
-  <main>
+  <section>
     <h1>
       We have the luxuries
     </h1>
     <h4>
       Please select your match
     </h4>
-  </main>,
+    <div
+      className="rooms-container"
+    />
+  </section>,
   ";",
 ]
 `;

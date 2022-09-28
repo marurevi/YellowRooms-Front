@@ -36,7 +36,7 @@ cd folder
 - Clone the repo:
 
 ```bash
-git clone https://github.com/anagudelogu/capstone-three-air-pollution-app.git`.
+git clone https://github.com/marurevi/YellowRooms-Front.git
 ```
 
 ### Install
