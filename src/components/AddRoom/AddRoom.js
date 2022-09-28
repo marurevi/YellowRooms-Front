@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createRoomActionCreator } from '../../Redux/Rooms/rooms';
+import './AddRoom.css';
 
 const AddRoom = () => {
   const dispatch = useDispatch();
@@ -32,70 +33,77 @@ const AddRoom = () => {
   };
 
   return (
-    <form action="/" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="photo">
-          Photo
+    <form className="addRoomForm" action="/" onSubmit={handleSubmit}>
+      <h1 className="addRoomTitle">ADD NEW ROOM</h1>
+      <div className="divInput">
+        <label className="labelInput" htmlFor="name">
+          Name of the room
           <input
-            type="text"
-            name="photo"
-            id="photo"
-            value={room.photo}
-            onChange={handleInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="name">
-          Name
-          <input
+            className="addRoomInput"
             type="text"
             name="name"
             id="name"
+            placeholder="Name"
             value={room.name}
             onChange={handleInputChange}
           />
         </label>
       </div>
-
-      <div>
-        <label htmlFor="stars">
-          Stars
+      <div className="divInput">
+        <label className="labelInput" htmlFor="photo">
+          Link to the photo (only online links are acceptable)
           <input
+            className="addRoomInput"
+            type="text"
+            name="photo"
+            id="photo"
+            placeholder="Link"
+            value={room.photo}
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+      <div className="divInput">
+        <label className="labelInput" htmlFor="stars">
+          How many Stars the room has?
+          <input
+            className="addRoomInput"
             type="number"
             name="stars"
             id="stars"
+            placeholder="Stars"
             value={room.stars}
             onChange={handleInputChange}
           />
         </label>
       </div>
-
-      <div>
-        <label htmlFor="persons_allowed">
-          Persons allowed
+      <div className="divInput">
+        <label className="labelInput" htmlFor="persons_allowed">
+          Size of the room (Persons allowed)
           <input
+            className="addRoomInput"
             type="number"
             name="persons_allowed"
             id="persons_allowed"
+            placeholder="Persons"
             value={room.persons_allowed}
             onChange={handleInputChange}
           />
         </label>
       </div>
-
-      <div>
-        <label htmlFor="description">
-          Description
+      <div className="divInput">
+        <label className="labelInput" htmlFor="description">
+          Information about the room
           <textarea
+            className="addRoomTextArea"
             name="description"
             id="description"
+            placeholder="Description"
             onChange={handleInputChange}
           />
         </label>
       </div>
-
-      <button type="submit">Create Room</button>
+      <button className="createRoomBtn" type="submit">CREATE ROOM</button>
     </form>
   );
 };

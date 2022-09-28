@@ -1,0 +1,65 @@
+.deleteRoomPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.warningTitle {
+  text-align: center;
+  color: rgb(255, 46, 46);
+  padding: 12px 0;
+  border-bottom: 4px solid rgb(255, 46, 46);
+}
+
+.deleteRoomPicture {
+  width: 128px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.deleteDiv {
+  display: flex;
+  width: 80%;
+  margin: 4% 0;
+}
+
+.deleteSection {
+  text-align: center;
+}
+
+.roomName {
+  font-size: 18px;
+  margin-top: 12px;
+}
+
+.deleteRoomBtn {
+  width: 80%;
+  height: 50%;
+  background-color: rgb(255, 46, 46);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  color: #fff;
+}
+
+@media only screen and (min-width: 769px) {
+  .warningTitle {
+    font-size: 36px;
+  }
+
+  .deleteRoomPicture {
+    min-width: 128px;
+    width: 30%;
+  }
+
+  .roomName {
+    font-size: 24px;
+    margin-bottom: 2%;
+  }
+
+  .deleteRoomBtn {
+    width: 50%;
+    font-size: 20px;
+  }
+}
