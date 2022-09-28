@@ -34,9 +34,10 @@ const AddRoom = () => {
 
   return (
     <form className="addRoomForm" action="/" onSubmit={handleSubmit}>
+      <h1 className="addRoomTitle">ADD NEW ROOM</h1>
       <div className="divInput">
-        <label htmlFor="name">
-          Insert the name of the room
+        <label className="labelInput" htmlFor="name">
+          Name of the room
           <input
             className="addRoomInput"
             type="text"
@@ -49,8 +50,8 @@ const AddRoom = () => {
         </label>
       </div>
       <div className="divInput">
-        <label htmlFor="photo">
-          Insert link to the photo (only online links are acceptable)
+        <label className="labelInput" htmlFor="photo">
+          Link to the photo (only online links are acceptable)
           <input
             className="addRoomInput"
             type="text"
@@ -63,7 +64,7 @@ const AddRoom = () => {
         </label>
       </div>
       <div className="divInput">
-        <label htmlFor="stars">
+        <label className="labelInput" htmlFor="stars">
           How many Stars the room has?
           <input
             className="addRoomInput"
@@ -77,7 +78,7 @@ const AddRoom = () => {
         </label>
       </div>
       <div className="divInput">
-        <label htmlFor="persons_allowed">
+        <label className="labelInput" htmlFor="persons_allowed">
           Size of the room (Persons allowed)
           <input
             className="addRoomInput"
@@ -91,10 +92,10 @@ const AddRoom = () => {
         </label>
       </div>
       <div className="divInput">
-        <label htmlFor="description">
+        <label className="labelInput" htmlFor="description">
           Information about the room
           <textarea
-            className="addRoomInput"
+            className="addRoomTextArea"
             name="description"
             id="description"
             placeholder="Description"
@@ -102,7 +103,7 @@ const AddRoom = () => {
           />
         </label>
       </div>
-      <button className="registerBtn" type="submit">CREATE ROOM</button>
+      <button className="createRoomBtn" type="submit">CREATE ROOM</button>
     </form>
   );
 };
