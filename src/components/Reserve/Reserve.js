@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { sendPost } from '../../API/api';
+import './Reserve.css';
 
 const Reserve = () => {
   const { room_id: roomId } = useParams();
@@ -35,11 +36,12 @@ const Reserve = () => {
   };
 
   return room ? (
-    <div>
-      <h2>Reserve Room</h2>
+    <div className="reserveRoom">
+      <p className="reserveRoomName">{room.attributes.name}</p>
+      <p>{room.attributes.description}</p>
       <form onSubmit={reserveRoomSubmit}>
         <label htmlFor="start_date">
-          Start reservation
+          Start Your Journey
           <input
             onChange={onChange}
             name="start_date"
@@ -50,7 +52,7 @@ const Reserve = () => {
           />
         </label>
         <label htmlFor="end_date">
-          End reservation
+          The End
           <input
             onChange={onChange}
             name="end_date"
