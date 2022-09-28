@@ -25,6 +25,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  z-index: 999;
 }
 
 .hamburger {
@@ -63,6 +64,26 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+.logoutBtn{
+  font-size: 1.6rem;
+  font-weight: bolder;
+  padding: 0.5rem;
+  margin-top: 4rem;
+  margin-left: 4rem;
+  background-color: #91bd04;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  height: max-content;
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.logoutBtn:hover{
+  box-shadow: #91bd04 2px 2px 10px;
+}
+
 .nav-link:hover {
   background-color: #91bd04;
   color: #fff;
@@ -86,6 +107,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    z-index: 999;
   }
 
   .nav-logo {
@@ -117,6 +139,26 @@ a {
 
   .nav-item {
     margin: 2.5rem 0;
+  }
+
+  .logoutBtn{
+    font-size: 1.6rem;
+    font-weight: bolder;
+    padding: 0.5rem;
+    margin-top: 4rem;
+    margin-left: 9rem;
+    background-color: #91bd04;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    height: max-content;
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+  }
+  
+  .logoutBtn:hover{
+    box-shadow: #91bd04 2px 2px 10px;
   }
 
   .hamburger {
