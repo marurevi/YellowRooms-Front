@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { sendPost } from '../../API/api';
+import '../Reserve/Reserve.css';
 
 const AllReserves = () => {
   const navigate = useNavigate();
@@ -36,42 +37,46 @@ const AllReserves = () => {
   };
 
   return (
-    <div>
-      <h2>Reserve Room</h2>
-      <form onSubmit={reserveRoomSubmit}>
-        <select onChange={onChange} name="room_id" required>
-          <option>SELECT OPTION</option>
+    <div className="reserveRoom">
+      <h2 className="reserveRoomName">Reserve Room</h2>
+      <form className="selectRoomForm" onSubmit={reserveRoomSubmit}>
+        <select className="selectRoomSelect" onChange={onChange} name="room_id" required>
+          <option className="selectRoomOption">SELECT ROOM</option>
           {rooms.map((room) => (
-            <option key={room.id} value={room.id}>
-              {room.name}
+            <option className="selectRoomOption" key={room.id} value={room.id}>
+              {room.attributes.name}
             </option>
           ))}
         </select>
         <input
           onChange={onChange}
-          name="start_date"
-          className="signInput"
-          type="date"
-          placeholder="Start reservation"
-          required
-        />
-        <input
-          onChange={onChange}
-          name="end_date"
-          className="signInput"
-          type="date"
-          placeholder="End reservation"
-          required
-        />
-        <input
-          onChange={onChange}
           name="city"
-          className="signInput"
+          className="selectCityReserve"
           type="text"
           placeholder="City"
           required
         />
-        <button type="submit">Create Reservation</button>
+        <label className="labelSelectReserveInput" htmlFor="start_date">
+          Start Journey
+          <input
+            onChange={onChange}
+            name="start_date"
+            className="selectRoomInput"
+            type="date"
+            required
+          />
+        </label>
+        <label className="labelSelectReserveInput" id="endLabel" htmlFor="end_date">
+          The End
+          <input
+            onChange={onChange}
+            name="end_date"
+            className="selectRoomInput"
+            type="date"
+            required
+          />
+        </label>
+        <button className="bookRoom" type="submit">Reserve</button>
       </form>
     </div>
   );

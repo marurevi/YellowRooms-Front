@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { sendPost } from '../../API/api';
+import './Reserve.css';
 
 const Reserve = () => {
   const { room_id: roomId } = useParams();
@@ -35,27 +36,28 @@ const Reserve = () => {
   };
 
   return room ? (
-    <div>
-      <h2>Reserve Room</h2>
-      <form onSubmit={reserveRoomSubmit}>
-        <label htmlFor="start_date">
-          Start reservation
+    <div className="reserveRoom">
+      <p className="reserveRoomName">{room.attributes.name}</p>
+      <p className="reserveRoomDescription">{room.attributes.description}</p>
+      <form className="reserveRoomForm" onSubmit={reserveRoomSubmit}>
+        <label className="labelReserveInput" htmlFor="start_date">
+          Start Your Journey
           <input
             onChange={onChange}
             name="start_date"
-            className="signInput"
+            className="dateInput"
             id="start_date"
             type="date"
             required
           />
         </label>
-        <label htmlFor="end_date">
-          End reservation
+        <label className="labelReserveInput" id="endLabel" htmlFor="end_date">
+          The End
           <input
             onChange={onChange}
             name="end_date"
             id="end_date"
-            className="signInput"
+            className="dateInput"
             type="date"
             required
           />
@@ -63,12 +65,12 @@ const Reserve = () => {
         <input
           onChange={onChange}
           name="city"
-          className="signInput"
+          className="selectCityReserve"
           type="text"
           placeholder="City"
           required
         />
-        <button type="submit">Create Reservation</button>
+        <button className="bookRoom" type="submit">Book Now</button>
       </form>
     </div>
   ) : (
