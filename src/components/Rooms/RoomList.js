@@ -30,7 +30,22 @@ const RoomList = (props) => {
       responsive={responsive}
       className="carousel-container"
       infinite
-      centerMode
+      centerMode={false}
+      autoPlay
+      autoPlaySpeed={3000}
+      additionalTransfrom={0}
+      draggable={false}
+      focusOnSelect={false}
+      keyBoardControl
+      minimumTouchDrag={80}
+      pauseOnHover
+      renderArrowsWhenDisabled={false}
+      rewind={false}
+      rewindWithAnimation={false}
+      rtl={false}
+      shouldResetAutoplay
+      slidesToSlide={1}
+      swipeable
     >
       {rooms.map(({ attributes: room }) => (
         <RoomItem key={room.id} room={room} />
