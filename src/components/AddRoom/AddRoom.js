@@ -92,6 +92,20 @@ const AddRoom = () => {
         </label>
       </div>
       <div className="divInput">
+        <label className="labelInput" htmlFor="persons_allowed">
+          Price
+          <input
+            className="addRoomInput"
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Price"
+            value={room.Price}
+            onChange={handleInputChange}
+          />
+        </label>
+      </div>
+      <div className="divInput">
         <label className="labelInput" htmlFor="description">
           Information about the room
           <textarea
