@@ -38,8 +38,8 @@ const Reserve = () => {
   return room ? (
     <div className="reserveRoom">
       <p className="reserveRoomName">{room.attributes.name}</p>
-      <p>{room.attributes.description}</p>
-      <form onSubmit={reserveRoomSubmit}>
+      <p className="reserveRoomDescription">{room.attributes.description}</p>
+      <form className="reserveRoomForm" onSubmit={reserveRoomSubmit}>
         <label htmlFor="start_date">
           Start Your Journey
           <input
@@ -65,12 +65,12 @@ const Reserve = () => {
         <input
           onChange={onChange}
           name="city"
-          className="signInput"
+          className="selectCityReserve"
           type="text"
           placeholder="City"
           required
         />
-        <button type="submit">Create Reservation</button>
+        <button className="bookRoom" type="submit">Book Now</button>
       </form>
     </div>
   ) : (
