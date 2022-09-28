@@ -19,7 +19,6 @@ const AllReserves = () => {
 
   const reserveRoomSubmit = async (e) => {
     e.preventDefault();
-    console.log(form);
     await sendPost('reservations', form)
       .then(() => {
         navigate('/reservations');

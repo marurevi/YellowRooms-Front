@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Reservation from './Reservation';
 import { getReservations } from '../../Redux/Reservations/Reservations';
+import './reservations.css';
 
 const Reservations = () => {
   const dispatch = useDispatch();
