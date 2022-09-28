@@ -13,17 +13,20 @@
 
 .label {
   font-size: 1.5em;
-  color: darkcyan;
   margin: 13px;
   text-transform: capitalize;
   line-height: 1.5em;
+  color: #ffde59;
+  text-shadow: black 2px 2px 2px;
 }
 
 .container {
-  background-color: white;
-  opacity: 0.8;
   border-radius: 5px;
   padding: 5px;
+  background-color: silver;
+  color: black;
+  font-weight: bolder;
+  opacity: 0.9;
 }
 
 button {
