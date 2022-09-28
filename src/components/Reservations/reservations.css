@@ -5,7 +5,7 @@
   box-shadow: 0 0 10px silver;
   font-size: 1.2rem;
   color: darkred;
-  max-width: fit-content;
+  max-width: max-content;
   display: inline-block;
   background-size: cover;
   margin: 15px;
