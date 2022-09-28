@@ -1,0 +1,37 @@
+.reservation {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 0 10px silver;
+  font-size: 1.2rem;
+  color: darkred;
+  max-width: fit-content;
+  display: inline-block;
+  background-size: cover;
+  margin: 15px;
+}
+
+.label {
+  font-size: 1.5em;
+  color: darkcyan;
+  margin: 13px;
+  text-transform: capitalize;
+  line-height: 1.5em;
+}
+
+.container {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+button {
+  padding: 5px;
+  color: white;
+  background-color: #e11010;
+}
+
+button:hover {
+  background-color: #2c0101;
+}
