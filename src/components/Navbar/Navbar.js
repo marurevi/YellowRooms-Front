@@ -73,9 +73,9 @@ const Navbar = () => {
             DELETE
           </NavLink>
         </li>
-        <li className="nav-item">
-          <button onClick={handleLogout} type="button">
-            Logout
+        <li>
+          <button onClick={handleLogout} type="button" className="logoutBtn">
+            LOGOUT
           </button>
         </li>
       </ul>
