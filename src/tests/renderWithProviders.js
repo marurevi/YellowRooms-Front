@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { render } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
@@ -7,7 +8,7 @@ import userReducer from '../Redux/Authenticate/authentication';
 import reservationsReducer from '../Redux/Reservations/Reservations';
 import roomsReducer from '../Redux/Rooms/rooms';
 
-export function renderWithProviders(
+export default function renderWithProviders(
   ui,
   {
     preloadedState = {},
@@ -29,3 +30,4 @@ export function renderWithProviders(
     ...render(ui, { wrapper: Wrapper, ...renderOptions }),
   };
 }
+/* eslint-enable react/prop-types */

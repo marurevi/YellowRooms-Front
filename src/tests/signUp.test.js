@@ -2,7 +2,7 @@ import React from 'react';
 import { screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import SignUp from '../components/SignUp/SignUp';
-import { renderWithProviders } from './renderWithProviders';
+import renderWithProviders from './renderWithProviders';
 
 test('Renders correctly', () => {
   renderWithProviders(

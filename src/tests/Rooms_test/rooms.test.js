@@ -1,8 +1,8 @@
 import React from 'react';
-import { renderWithProviders } from '../renderWithProviders';
 import { screen } from '@testing-library/react';
-import Rooms from '../../components/Rooms/Rooms';
 import { MemoryRouter } from 'react-router-dom';
+import renderWithProviders from '../renderWithProviders';
+import Rooms from '../../components/Rooms/Rooms';
 
 test('Rooms show render the same', () => {
   renderWithProviders(

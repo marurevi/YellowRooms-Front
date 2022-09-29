@@ -2,7 +2,7 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { screen } from '@testing-library/react';
 import Reserve from '../components/Reserve/Reserve';
-import { renderWithProviders } from './renderWithProviders';
+import renderWithProviders from './renderWithProviders';
 
 test('Reserve snapshot', () => {
   renderWithProviders(

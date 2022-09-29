@@ -1,8 +1,8 @@
 import React from 'react';
-import { renderWithProviders } from '../renderWithProviders';
-import Detail from '../../components/Detail/Detail';
 import { MemoryRouter } from 'react-router-dom';
 import { screen } from '@testing-library/react';
+import renderWithProviders from '../renderWithProviders';
+import Detail from '../../components/Detail/Detail';
 
 test('Rooms show render the same', async () => {
   renderWithProviders(
