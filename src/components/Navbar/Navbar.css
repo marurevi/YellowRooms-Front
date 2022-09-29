@@ -120,7 +120,8 @@ a {
     left: -100%;
     top: 0;
     flex-direction: column;
-    background-color: #fff;
+    background-color: rgba(219, 219, 219, 0.742);
+    filter: bacdrop(0.7);
     width: 100%;
     height: 100vh;
     align-self: center;
@@ -129,8 +130,9 @@ a {
   }
 
   .nav-menu.active {
-    top: 4.5rem;
+    top: 0;
     left: 0;
+    padding: 6rem 0;
   }
 
   .nav-link:hover {
