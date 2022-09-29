@@ -11,6 +11,20 @@ You can see the backend for this project [here](https://github.com/marurevi/Yell
 - React
 - Redux
 
+## Live Demo & Screenshots
+
+>[YELLOW ROOMS](https://yellow-rooms.netlify.app/)
+<table>
+<tr>
+<td><img src="src/img/splash.png" alt="splash page"></td>
+<td><img src="src/img/signup.png" alt="signup page"></td>
+<td><img src="src/img/login.png" alt="login page"></td>
+</tr>
+</table>
+<div align="center"><img src="src/img/all-versions-picture.png" alt="all pages"></div>
+
+
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
