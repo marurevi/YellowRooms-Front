@@ -36,7 +36,7 @@ export const createRoomActionCreator = (room, navigate) => async (dispatch) => {
     });
     navigate();
   } catch (error) {
-    console.error('Error creating the room', error);
+    console.error('Error creating the room', error); // eslint-disable-line no-console
   }
 };
 

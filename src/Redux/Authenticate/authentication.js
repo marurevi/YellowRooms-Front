@@ -43,7 +43,7 @@ export const logoutUser = () => async (dispatch, getState) => {
     dispatch({ type: DESTROY_USER_SESSION });
     destroyCurrentUser();
   } catch (error) {
-    console.error(error);
+    console.error(error); // eslint-disable-line no-console
   }
 };
 

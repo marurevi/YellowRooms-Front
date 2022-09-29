@@ -24,7 +24,7 @@ const AllReserves = () => {
         navigate('/reservations');
       })
       .catch((error) => {
-        console.error(error);
+        console.error(error); // eslint-disable-line no-console
       });
   };
 

@@ -4,7 +4,7 @@ const GET_RESERVATIONS = 'reservations/reservations/SET_RESERVATIONS';
 const DELETE_RESERVATION = 'reservations/reservations/DELETE_RESERVATION';
 export const getReservations = () => async (dispatch) => {
   const reservations = await sendGet('reservations').catch((error) => {
-    console.error(error);
+    console.error(error); // eslint-disable-line no-console
   });
   dispatch({ type: GET_RESERVATIONS, payload: reservations.data });
 };
@@ -15,7 +15,7 @@ export const deleteReservation = (id) => async (dispatch) => {
       dispatch({ type: DELETE_RESERVATION, payload: id });
     })
     .catch((error) => {
-      console.log(error);
+      console.log(error); // eslint-disable-line no-console
     });
 };
 

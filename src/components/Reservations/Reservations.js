@@ -8,7 +8,7 @@ const Reservations = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getReservations());
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const userReservations = useSelector((state) => state.reservations.filter(
     (reservation) => reservation.attributes.user_id === state.user.id,
   ));
