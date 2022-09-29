@@ -29,12 +29,8 @@
   opacity: 0.9;
 }
 
-button {
+.container button {
   padding: 5px;
   color: white;
   background-color: #e11010;
-}
-
-button:hover {
-  background-color: #2c0101;
 }
