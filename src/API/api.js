@@ -3,10 +3,10 @@ import axios from 'axios';
 // user is taken by calling this method
 export const getCurrentUser = () => JSON.parse(localStorage.getItem('user'));
 
-export const baseUrl = 'https://yellow-rooms.herokuapp.com/api/v1/';
+export const baseUrl = 'https://yellow-rooms.fly.dev/api/v1/';
 let token = getCurrentUser()?.token || '';
 const myAxios = () => axios.create({
-  baseURL: 'https://yellow-rooms.herokuapp.com/api/v1/',
+  baseURL: 'https://yellow-rooms.fly.dev/api/v1/',
   headers: {
     'Content-Type': 'application/json',
     Authorization: token,

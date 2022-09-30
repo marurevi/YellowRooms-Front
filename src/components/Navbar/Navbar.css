@@ -25,6 +25,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  /* margin-bottom: 2rem; */
   z-index: 1005;
 }
 
