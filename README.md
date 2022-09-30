@@ -6,10 +6,26 @@ Yellow rooms has been created to book reservations for hotel rooms. On this repo
 
 You can see the backend for this project [here](https://github.com/marurevi/YellowRooms-Back).
 
+## Kanban Board
+
+[Kanban Board Link](https://github.com/users/marurevi/projects/3/views/1)
+
+- We are four (4) in this team. 
+
+  - @Tadesse-Alemayehu 
+  - @anagudelogu 
+  - @marurevi 
+  - @AxelSoler 
+
+### Our Kanban board
+
+https://user-images.githubusercontent.com/69077061/190270018-09626f76-dfc5-4f74-85c1-211cd9b4b8b2.mp4
+
 ## Built With
 
 - React
 - Redux
+- Deployed with Netifly
 
 ## Live Demo & Screenshots
 
